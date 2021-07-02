@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using ColorPicker.iOS;
 using Foundation;
 using UIKit;
 
@@ -24,6 +24,7 @@ namespace WLED.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+            ColorPickerEffects.Init();
 
             return base.FinishedLaunching(app, options);
         }

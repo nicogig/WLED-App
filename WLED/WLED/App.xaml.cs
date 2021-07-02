@@ -3,6 +3,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms.Xaml;
 using System.Collections.ObjectModel;
 using System.Linq;
+using WLED.Views;
 
 /*
  * WLED App v1.0.2
@@ -26,7 +27,8 @@ namespace WLED
             InitializeComponent();
 
             listview = new DeviceListViewPage();
-            MainPage = listview;
+            //MainPage = listview;
+            MainPage = new DevicePage();
             //MainPage.SetValue(NavigationPage.BarTextColorProperty, Color.White);
             Application.Current.MainPage.SetValue(NavigationPage.BarBackgroundColorProperty, "#0000AA");
 

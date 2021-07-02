@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:colorpicker="clr-namespace:ColorPicker;assembly=ColorPicker"
+             xmlns:wled="clr-namespace:WLED"
+             x:Class="WLED.Views.DevicePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="backgroundColor">#ffff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <wled:MenuBar x:Name="topMenuBar"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <colorpicker:ColorWheel x:Name="colourWheel"
+                                        ShowLuminositySlider="True"
+                                        ShowLuminosityWheel="False"
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="2"/>
+                <Label x:Name="colourLabel"
+                       Text="{Binding Source={x:Reference colourWheel}, Path=SelectedColor}"
+                       FontSize="0.0001"
+                       TextColor="{DynamicResource backgroundColor}"
+                       Grid.Row="0"
+                       Grid.Column="0" /> <!-- This label is here until we get a ColorChanged event. -->
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
