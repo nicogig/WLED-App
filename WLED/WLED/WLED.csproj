@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -17,28 +17,28 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="DeviceListViewPage.xaml.cs">
+    <Compile Update="Views\DeviceListViewPage.xaml.cs">
       <DependentUpon>DeviceListViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="DeviceControlPage.xaml.cs">
+    <Compile Update="Views\DeviceControlPage.xaml.cs">
       <DependentUpon>DeviceControlPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="DeviceAddPage.xaml">
+    <EmbeddedResource Update="Views\DeviceAddPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="DeviceListViewPage.xaml">
+    <EmbeddedResource Update="Views\DeviceListViewPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="DeviceControlPage.xaml">
+    <EmbeddedResource Update="Views\DeviceControlPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="DeviceModificationListViewPage.xaml">
+    <EmbeddedResource Update="Views\DeviceModificationListViewPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MenuBar.xaml">
+    <EmbeddedResource Update="Views\MenuBar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
