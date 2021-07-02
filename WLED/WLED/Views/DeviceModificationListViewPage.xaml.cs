@@ -34,6 +34,11 @@ namespace WLED
             if (DeviceList.Count == 0) Navigation.PopModalAsync(false);
         }
 
+        private async void OnDismissTapped (object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+
         private void OnDeviceTapped(object sender, ItemTappedEventArgs e)
         {
             //Deselect Item immediately

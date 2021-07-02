@@ -25,11 +25,31 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
+
+    <NavigationPage.TitleView>
+        <Grid BackgroundColor="#333">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="65" />
+            </Grid.ColumnDefinitions>
+            <Image Source="wled_logo.png" Style="{StaticResource MenuBarButtonStyle}" BackgroundColor="#333" Grid.Column="1">
+
+            </Image>
+            <Image x:Name="imageRight" Source="icon_check.png"  Style="{StaticResource MenuBarButtonStyle}" BackgroundColor="#333" Grid.Column="2">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnEntryCompleted" />
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
         <StackLayout>
-            <wled:MenuBar x:Name="topMenuBar"/>
-
+            
             <Button Text="Discover lights..." BackgroundColor="#333" TextColor="White" Margin="10" Clicked="OnDiscoveryButtonClicked"/>
             <Label x:Name="discoveryResultLabel" Text="" Style="{StaticResource LabelStyle}" IsVisible="False" />
             <BoxView HeightRequest="1" HorizontalOptions="Fill" Margin="8,0" BackgroundColor="#888"/>

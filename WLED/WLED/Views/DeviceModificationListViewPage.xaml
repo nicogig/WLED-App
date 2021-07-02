@@ -8,8 +8,25 @@
              ios:Page.UseSafeArea="true"
              >
 
+    <NavigationPage.TitleView>
+        <Grid BackgroundColor="#333">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="65" />
+            </Grid.ColumnDefinitions>
+           
+            <Image Source="wled_logo.png" Style="{StaticResource MenuBarButtonStyle}" BackgroundColor="#333" Grid.Column="1">
+
+            </Image>
+        </Grid>
+    </NavigationPage.TitleView>
+
     <StackLayout>
-        <wled:MenuBar x:Name="topMenuBar"/>
+        
         <Label Text="Click on devices to hide them!" 
                HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
                TextColor="White" Font="18"/>

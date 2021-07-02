@@ -18,7 +18,7 @@ namespace WLED
 {
     public partial class App : Application
     {
-        private DeviceListViewPage listview;
+        private DevicesListView listview;
 
         private bool connectedToLocalLast = false;
 
@@ -26,11 +26,11 @@ namespace WLED
         {
             InitializeComponent();
 
-            listview = new DeviceListViewPage();
-            //MainPage = listview;
-            MainPage = new DevicePage();
+            listview = new DevicesListView();
+            MainPage = new NavigationPage(listview);
+            //MainPage = new DevicePage();
             //MainPage.SetValue(NavigationPage.BarTextColorProperty, Color.White);
-            Application.Current.MainPage.SetValue(NavigationPage.BarBackgroundColorProperty, "#0000AA");
+            Application.Current.MainPage.SetValue(NavigationPage.BarBackgroundColorProperty, "#333");
 
             Connectivity.ConnectivityChanged += OnConnectivityChanged;
         }

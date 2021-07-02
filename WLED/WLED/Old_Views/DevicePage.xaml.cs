@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace WLED.Views
 {
@@ -15,6 +16,11 @@ namespace WLED.Views
         public DevicePage()
         {
             InitializeComponent();
+        }
+
+        void OnLogoTapped(object sender, EventArgs e)
+        {
+            Launcher.OpenAsync(new Uri("https://github.com/Aircoookie/WLED"));
         }
     }
 }

@@ -2,23 +2,48 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:wled="clr-namespace:WLED"
-             x:Class="WLED.DeviceListViewPage"
-             BackgroundColor="#222"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
-             ios:Page.UseSafeArea="true"
-             >
+             xmlns:wledviews="clr-namespace:WLED.Views"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="WLED.Views.DevicesListView"
+             ios:Page.UseSafeArea="True">
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="LabelStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="White" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
+            
         </ResourceDictionary>
     </ContentPage.Resources>
-    
-    <StackLayout BackgroundColor="#222222">
-        <wled:MenuBar x:Name="topMenuBar"/>
+
+    <NavigationPage.TitleView>
+        <Grid BackgroundColor="#333">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="65" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="65" />
+            </Grid.ColumnDefinitions>
+            <Image x:Name="imageLeft" Source="icon_bin.png" Style="{StaticResource MenuBarButtonStyle}" BackgroundColor="#333" Grid.Column="0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnDeleteButtonTapped" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Image Source="wled_logo.png" Style="{StaticResource MenuBarButtonStyle}" BackgroundColor="#333" Grid.Column="1">
+                
+            </Image>
+            <Image x:Name="imageRight" Source="icon_add.png"  Style="{StaticResource MenuBarButtonStyle}" BackgroundColor="#333" Grid.Column="2">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnAddButtonTapped" />
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+    </NavigationPage.TitleView>
+
+    <StackLayout>
 
         <Label x:Name="welcomeLabel"
                Text="Welcome!"
@@ -39,15 +64,14 @@
                 HasUnevenRows="True"
                 RowHeight="-1"
                 ios:ListView.SeparatorStyle="FullWidth"
-                BackgroundColor="#222222"
                 Footer=""
                 CachingStrategy="RecycleElement">
 
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout BackgroundColor="#222222" IsVisible="{Binding IsEnabled}" HeightRequest="{Binding ListHeight}">
-                            <Grid BackgroundColor="#222222" Padding="6" Margin="6,2" >
+                        <StackLayout  IsVisible="{Binding IsEnabled}" HeightRequest="{Binding ListHeight}">
+                            <Grid Padding="6" Margin="6,2" >
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="35" />
                                     <RowDefinition Height="25" />

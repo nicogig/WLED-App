@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using WLED.Views;
 
 namespace WLED
 {
@@ -12,14 +13,16 @@ namespace WLED
         private bool discoveryMode = false;
         private int devicesFoundCount = 0;
 
-		public DeviceAddPage(DeviceListViewPage list)
+		public DeviceAddPage(DevicesListView list)
 		{
 			InitializeComponent ();
 
-            topMenuBar.SetButtonIcon(ButtonLocation.Right, ButtonIcon.Done);
-            topMenuBar.RightButtonTapped += OnEntryCompleted;
-
             networkAddressEntry.Focus();
+        }
+
+        private async void OnDismissTapped(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
         }
 
         //If done, create device and close page

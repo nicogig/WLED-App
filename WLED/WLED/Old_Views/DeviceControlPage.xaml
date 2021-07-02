@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:wled="clr-namespace:WLED"
+             xmlns:wledviews="clr-namespace:WLED.Views"
+             x:Class="WLED.DeviceControlPage"
+             BackgroundColor="#222"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             android:TabbedPage.ToolbarPlacement="Bottom"
+             >
+    <TabbedPage.BarBackgroundColor>
+        <Color>#333</Color>
+    </TabbedPage.BarBackgroundColor>
+    <TabbedPage.SelectedTabColor>
+        <Color>#737373</Color>
+    </TabbedPage.SelectedTabColor>
+    <TabbedPage.UnselectedTabColor>
+        <Color>#333</Color>
+    </TabbedPage.UnselectedTabColor>
+</TabbedPage>
