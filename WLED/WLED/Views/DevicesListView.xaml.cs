@@ -101,10 +101,9 @@ namespace WLED.Views
         private void InsertDeviceSorted (WLEDDevice device)
         {
             int index = 0;
-            while (index < deviceList.Count && device.CompareTo(deviceList.ElementAt(index)) > 0)
-                index++;
+            while (index < deviceList.Count && device.CompareTo(deviceList.ElementAt(index)) > 0) index++;
             deviceList.Insert(index, device);
-           
+
         }
 
         private void ReinsertDeviceSorted(WLEDDevice device)

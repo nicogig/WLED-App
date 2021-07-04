@@ -24,6 +24,31 @@ namespace WLED
             return Instance;
         }
 
+        public async Task<string> GetWLEDJson (string DeviceURI, string apiSpecifier)
+        {
+            string apiCommand = "/json/";
+            if (!string.IsNullOrEmpty(apiSpecifier))
+            {
+                apiCommand += apiSpecifier;
+            }
+
+            try
+            {
+                string url = DeviceURI + apiCommand;
+                var result = await Client.GetAsync(url);
+                if (result.IsSuccessStatusCode)
+                    return await result.Content.ReadAsStringAsync();
+                else
+                    return "err";
+            } catch (Exception ex)
+            {
+                return "err";
+            }
+        }
+
+
+        
+
         public async Task<string> Send_WLED_API_Call(string DeviceURI, string API_Call)
         {
             try

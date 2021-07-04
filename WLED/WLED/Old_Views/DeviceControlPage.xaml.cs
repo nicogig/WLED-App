@@ -20,7 +20,9 @@ namespace WLED
         {
             InitializeComponent();
             this.Title = device.Name;
-            this.Children.Add(new DevicePage());
+            
+            
+            this.Children.Add(new DevicePage(pageURL, device));
         }
             /*currentDevice = device;
             if (currentDevice == null) loadingLabel.Text = "Loading... (WLED-AP)"; //If the device is null, we are connected to the WLED light's access point

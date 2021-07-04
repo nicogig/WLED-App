@@ -47,7 +47,7 @@ namespace WLED
             device.Name = name;
             device.NetworkAddress = address;
 
-            await Navigation.PopModalAsync(false);
+            await Navigation.PopAsync();
 
             //Add device, but not if the user clicked checkmark after doing auto-discovery only
             if (devicesFoundCount == 0 || !address.Equals("192.168.4.1")) OnDeviceCreated(new DeviceCreatedEventArgs(device));

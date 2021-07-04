@@ -25,8 +25,9 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <colorpicker:ColorWheel x:Name="colourWheel"
-                                        ShowLuminositySlider="True"
-                                        ShowLuminosityWheel="False"
+                                        ShowLuminositySlider="False"
+                                        ShowLuminosityWheel="True"
+                                    Padding="15"
                                         Grid.Row="0"
                                         Grid.Column="0"
                                         Grid.ColumnSpan="2"/>

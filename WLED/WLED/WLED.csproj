@@ -22,7 +22,7 @@
     <Compile Update="Old_Views\DeviceControlPage.xaml.cs">
       <DependentUpon>DeviceControlPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Old_Views\DevicePage.xaml.cs">
+    <Compile Update="Views\DevicePage.xaml.cs">
       <DependentUpon>DevicePage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -40,7 +40,7 @@
     <EmbeddedResource Update="Old_Views\MenuBar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Old_Views\DevicePage.xaml">
+    <EmbeddedResource Update="Views\DevicePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\DevicesListView.xaml">

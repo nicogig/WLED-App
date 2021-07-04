@@ -7,20 +7,24 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
+using WLED;
 
 namespace WLED.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DevicePage : ContentPage
     {
-        public DevicePage()
+        string DeviceURI;
+        WLEDDevice wledDevice;
+
+        public DevicePage(string pageURL, WLEDDevice device)
         {
             InitializeComponent();
+            DeviceURI = pageURL;
+            wledDevice = device;
+            
         }
 
-        void OnLogoTapped(object sender, EventArgs e)
-        {
-            Launcher.OpenAsync(new Uri("https://github.com/Aircoookie/WLED"));
-        }
+        
     }
 }

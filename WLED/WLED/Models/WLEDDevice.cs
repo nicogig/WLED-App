@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Xamarin.Forms;
+using Newtonsoft.Json;
+using WLED.Models;
 
 namespace WLED
 {
@@ -140,6 +143,95 @@ namespace WLED
 
         //member functions
 
+        public async Task<bool> GetInfo()
+        {
+            string url = "http://" + networkAddress;
+
+            if (networkAddress.StartsWith("https://"))
+            {
+                url = networkAddress;
+            }
+
+            string response = await DeviceHttpConnection.GetInstance().GetWLEDJson(url, "info");
+            if (response == null)
+            {
+                CurrentStatus = DeviceStatus.Unreachable;
+                return false;
+            }
+            else if (response == "err")
+            {
+                CurrentStatus = DeviceStatus.Error;
+                return false;
+            }
+            else 
+            {
+                JSONInfoModel jsonInfoModel = new JSONInfoModel();
+                try
+                {
+                    jsonInfoModel = JsonConvert.DeserializeObject<JSONInfoModel>(response);
+                }
+                catch (Exception ex)
+                {
+                    CurrentStatus = DeviceStatus.Error;
+                    return false;
+                }
+                CurrentStatus = DeviceStatus.Default;
+                if (!NameIsCustom) Name = jsonInfoModel.name;
+
+                return true;
+            }
+
+        }
+
+        public async Task<bool> UpdateStatus()
+        {
+            string url = "http://" + networkAddress;
+
+            if (networkAddress.StartsWith("https://"))
+            {
+                url = networkAddress;
+            }
+
+            string response = await DeviceHttpConnection.GetInstance().GetWLEDJson(url, "state");
+            if (response == null)
+            {
+                CurrentStatus = DeviceStatus.Unreachable;
+                return false;
+            }
+            else if (response == "err")
+            {
+                CurrentStatus = DeviceStatus.Error;
+                return false;
+            }
+            else
+            {
+                JSONStateModel jsonStateModel = new JSONStateModel();
+                try
+                {
+                    jsonStateModel = JsonConvert.DeserializeObject<JSONStateModel>(response);
+                }
+                catch (Exception ex)
+                {
+                    CurrentStatus = DeviceStatus.Error;
+                    return false;
+                }
+                CurrentStatus = DeviceStatus.Default;
+
+                StateCurrent = jsonStateModel.on;
+                if (jsonStateModel.bri > 0 && jsonStateModel.bri != BrightnessCurrent)
+                {
+                    brightnessReceived = jsonStateModel.bri;
+                    BrightnessCurrent = jsonStateModel.bri;
+                    OnPropertyChanged("BrightnessCurrent");
+                }
+                int mainseg = jsonStateModel.mainseg;
+                SegInfo segInfos = jsonStateModel.seg[mainseg];
+                IList<int> colorIndexesPrimary = segInfos.col[0];
+                ColorCurrent = Color.FromRgb(colorIndexesPrimary[0], colorIndexesPrimary[1], colorIndexesPrimary[2]);
+                return true;
+            }
+        }
+
         //send a call to this device's WLED HTTP API
         //API reference: http://apiref.wled.me
         public async Task<bool> SendAPICall(string call)
@@ -192,7 +284,8 @@ namespace WLED
         public async Task<bool> Refresh() //fetches updated values from WLED device
         {
             if (!IsEnabled) return false;
-            return await SendAPICall("");
+            return (await GetInfo() && await UpdateStatus());
+            //return await SendAPICall("");
         }
 
         public int CompareTo(object comp) //compares devices in alphabetic order based on name

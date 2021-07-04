@@ -27,11 +27,13 @@ namespace WLED
             InitializeComponent();
 
             listview = new DevicesListView();
-            MainPage = new NavigationPage(listview);
+            MainPage = new NavigationPage(listview) { 
+                BarBackgroundColor = Color.FromHex("#333"),
+                BarTextColor = Color.White,
+            };
             //MainPage = new DevicePage();
             //MainPage.SetValue(NavigationPage.BarTextColorProperty, Color.White);
-            Application.Current.MainPage.SetValue(NavigationPage.BarBackgroundColorProperty, "#333");
-
+            
             Connectivity.ConnectivityChanged += OnConnectivityChanged;
         }
 
