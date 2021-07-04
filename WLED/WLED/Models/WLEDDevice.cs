@@ -183,7 +183,7 @@ namespace WLED
 
         }
 
-        public async Task<bool> UpdateStatus()
+        public async Task<bool> GetStatus()
         {
             string url = "http://" + networkAddress;
 
@@ -284,8 +284,7 @@ namespace WLED
         public async Task<bool> Refresh() //fetches updated values from WLED device
         {
             if (!IsEnabled) return false;
-            return (await GetInfo() && await UpdateStatus());
-            //return await SendAPICall("");
+            return await GetInfo() && await GetStatus();
         }
 
         public int CompareTo(object comp) //compares devices in alphabetic order based on name

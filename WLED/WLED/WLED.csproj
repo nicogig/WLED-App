@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Old_Views\DeviceControlPage.xaml.cs">
+    <Compile Update="Views\DeviceControlPage.xaml.cs">
       <DependentUpon>DeviceControlPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\DevicePage.xaml.cs">
@@ -31,13 +31,10 @@
     <EmbeddedResource Update="Views\DeviceAddPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Old_Views\DeviceControlPage.xaml">
+    <EmbeddedResource Update="Views\DeviceControlPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\DeviceModificationListViewPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Old_Views\MenuBar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\DevicePage.xaml">
