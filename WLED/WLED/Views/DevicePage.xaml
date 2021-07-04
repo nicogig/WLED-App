@@ -38,6 +38,11 @@
                        Grid.Row="0"
                        Grid.Column="0" />
             <!-- This label is here until we get a ColorChanged event. -->
+            <Picker x:Name="palettesPicker"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

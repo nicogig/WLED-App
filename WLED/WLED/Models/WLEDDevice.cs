@@ -21,6 +21,7 @@ namespace WLED
         private bool stateCurrent = false;                                      //Is the light currently on?
         private bool isEnabled = true;                                          //Disabled devices don't get polled or show up in the list
         private double brightnessReceived = 0.9, brightnessCurrent = 0.9;       //There are two vars for brightness to discern API responses from slider updates
+        private List<string> supportedPalettes;
 
         [XmlElement("url")]
         public string NetworkAddress
@@ -91,6 +92,9 @@ namespace WLED
         public Color ColorCurrent { get; set; }
 
         [XmlIgnore]
+        public int CurrentPalette { get; set; }
+
+        [XmlIgnore]
         public bool StateCurrent
         {
             get { return stateCurrent; }
@@ -132,6 +136,20 @@ namespace WLED
             }
         }
 
+        [XmlElement("pal")]
+        public List<string> SupportedPalettes 
+        { 
+            get 
+            { 
+                return supportedPalettes; 
+            }
+            set 
+            { 
+                supportedPalettes = value; 
+            } 
+        }
+
+
         //constructors
         public WLEDDevice() { }
 
@@ -143,7 +161,7 @@ namespace WLED
 
         //member functions
 
-        public async Task<bool> GetInfo()
+        public async Task<string> MakeConnection(string apiCall)
         {
             string url = "http://" + networkAddress;
 
@@ -152,84 +170,95 @@ namespace WLED
                 url = networkAddress;
             }
 
-            string response = await DeviceHttpConnection.GetInstance().GetWLEDJson(url, "info");
+            string response = await DeviceHttpConnection.GetInstance().GetWLEDJson(url, apiCall);
             if (response == null)
             {
                 CurrentStatus = DeviceStatus.Unreachable;
-                return false;
+                return null;
             }
             else if (response == "err")
             {
                 CurrentStatus = DeviceStatus.Error;
+                return "err";
+            }
+            CurrentStatus = DeviceStatus.Default;
+            return response;
+        }
+
+        public async Task<bool> InitDevice() //fetches updated values from WLED device
+        {
+            if (!IsEnabled) return false;
+            return await GetInfo() && await GetStatus() && await GetPalettesInfo();
+        }
+
+        public async Task<bool> GetPalettesInfo()
+        {
+            string response = await MakeConnection("palettes");
+            if (response == null || response == "err") return false;
+
+            try
+            {
+                SupportedPalettes = JsonConvert.DeserializeObject<List<string>>(response);
+            }
+            catch (Exception)
+            {
+                CurrentStatus = DeviceStatus.Error;
                 return false;
             }
-            else 
+            return true;
+        }
+
+        public async Task<bool> GetInfo()
+        {
+            string response = await MakeConnection("info");
+            if (response == null || response == "err") return false;
+
+            JSONInfoModel jsonInfoModel = new JSONInfoModel();
+            try
             {
-                JSONInfoModel jsonInfoModel = new JSONInfoModel();
-                try
-                {
-                    jsonInfoModel = JsonConvert.DeserializeObject<JSONInfoModel>(response);
-                }
-                catch (Exception ex)
-                {
-                    CurrentStatus = DeviceStatus.Error;
-                    return false;
-                }
-                CurrentStatus = DeviceStatus.Default;
-                if (!NameIsCustom) Name = jsonInfoModel.name;
-
-                return true;
+                jsonInfoModel = JsonConvert.DeserializeObject<JSONInfoModel>(response);
             }
+            catch (Exception)
+            {
+                CurrentStatus = DeviceStatus.Error;
+                return false;
+            }
+            CurrentStatus = DeviceStatus.Default;
+            if (!NameIsCustom) Name = jsonInfoModel.name;
 
+            return true;
         }
 
         public async Task<bool> GetStatus()
         {
-            string url = "http://" + networkAddress;
+            string response = await MakeConnection("state");
+            if (response == null || response == "err") return false;
 
-            if (networkAddress.StartsWith("https://"))
+            JSONStateModel jsonStateModel = new JSONStateModel();
+            try
             {
-                url = networkAddress;
+                jsonStateModel = JsonConvert.DeserializeObject<JSONStateModel>(response);
             }
-
-            string response = await DeviceHttpConnection.GetInstance().GetWLEDJson(url, "state");
-            if (response == null)
-            {
-                CurrentStatus = DeviceStatus.Unreachable;
-                return false;
-            }
-            else if (response == "err")
+            catch (Exception)
             {
                 CurrentStatus = DeviceStatus.Error;
                 return false;
             }
-            else
-            {
-                JSONStateModel jsonStateModel = new JSONStateModel();
-                try
-                {
-                    jsonStateModel = JsonConvert.DeserializeObject<JSONStateModel>(response);
-                }
-                catch (Exception ex)
-                {
-                    CurrentStatus = DeviceStatus.Error;
-                    return false;
-                }
-                CurrentStatus = DeviceStatus.Default;
+            CurrentStatus = DeviceStatus.Default;
 
-                StateCurrent = jsonStateModel.on;
-                if (jsonStateModel.bri > 0 && jsonStateModel.bri != BrightnessCurrent)
-                {
-                    brightnessReceived = jsonStateModel.bri;
-                    BrightnessCurrent = jsonStateModel.bri;
-                    OnPropertyChanged("BrightnessCurrent");
-                }
-                int mainseg = jsonStateModel.mainseg;
-                SegInfo segInfos = jsonStateModel.seg[mainseg];
-                IList<int> colorIndexesPrimary = segInfos.col[0];
-                ColorCurrent = Color.FromRgb(colorIndexesPrimary[0], colorIndexesPrimary[1], colorIndexesPrimary[2]);
-                return true;
+            StateCurrent = jsonStateModel.on;
+            if (jsonStateModel.bri > 0 && jsonStateModel.bri != BrightnessCurrent)
+            {
+                brightnessReceived = jsonStateModel.bri;
+                BrightnessCurrent = jsonStateModel.bri;
+                OnPropertyChanged("BrightnessCurrent");
             }
+            int mainseg = jsonStateModel.mainseg;
+            SegInfo segInfos = jsonStateModel.seg[mainseg];
+            IList<int> colorIndexesPrimary = segInfos.col[0];
+            ColorCurrent = Color.FromRgb(colorIndexesPrimary[0], colorIndexesPrimary[1], colorIndexesPrimary[2]);
+            CurrentPalette = segInfos.pal;
+            return true;  
         }
 
         //send a call to this device's WLED HTTP API

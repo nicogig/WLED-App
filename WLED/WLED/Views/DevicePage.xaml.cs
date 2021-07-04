@@ -22,7 +22,9 @@ namespace WLED.Views
             InitializeComponent();
             DeviceURI = pageURL;
             wledDevice = device;
-            
+            colourWheel.SelectedColor = wledDevice.ColorCurrent;
+            palettesPicker.ItemsSource = wledDevice.SupportedPalettes;
+            palettesPicker.SelectedIndex = wledDevice.CurrentPalette;
         }
 
         

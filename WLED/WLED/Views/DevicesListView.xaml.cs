@@ -83,7 +83,7 @@ namespace WLED.Views
                 }
                 InsertDeviceSorted(toAdd);
                 toAdd.PropertyChanged += DevicePropertyChanged;
-                if (e.RefreshRequired) _ = toAdd.Refresh();
+                if (e.RefreshRequired) _ = toAdd.InitDevice();
 
                 UpdateElementsVisibility();
             }

@@ -14,8 +14,6 @@ namespace WLED
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class DeviceControlPage : TabbedPage
 	{
-        private WLEDDevice currentDevice;
-
         public DeviceControlPage(string pageURL, WLEDDevice device)
         {
             InitializeComponent();
@@ -23,32 +21,8 @@ namespace WLED
             
             
             this.Children.Add(new DevicePage(pageURL, device));
+            this.Children.Add(new DeviceEffectsPage());
+            this.Children.Add(new DeviceSettingsPage());
         }
-            /*currentDevice = device;
-            if (currentDevice == null) loadingLabel.Text = "Loading... (WLED-AP)"; //If the device is null, we are connected to the WLED light's access point
-            UIBrowser.Source = pageURL;
-            UIBrowser.Navigated += OnNavigationCompleted;
-            topMenuBar.LeftButtonTapped += OnBackButtonTapped;
-        }
-
-        private void OnNavigationCompleted(object sender, WebNavigatedEventArgs e)
-        {
-            if (e.Result == WebNavigationResult.Success)
-            {
-                loadingLabel.IsVisible = false;
-                if (currentDevice != null) currentDevice.CurrentStatus = DeviceStatus.Default;
-            } else
-            {
-                if (currentDevice != null) currentDevice.CurrentStatus = DeviceStatus.Unreachable;
-                loadingLabel.IsVisible = true;
-                loadingLabel.Text = "Device Unreachable";
-            }
-        }
-
-        private async void OnBackButtonTapped(object sender, EventArgs e)
-        {
-            await Navigation.PopModalAsync(false);
-            currentDevice?.Refresh(); //refresh device list item to apply changes made in the control page
-        }*/
     }
 }
