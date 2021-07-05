@@ -6,7 +6,8 @@
              x:Class="WLED.Views.DevicePage"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true"
-             Title="Colors">
+             Title="Colors"
+             IconImageSource="outline_palette_white_48.png">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="backgroundColor">#ffff</Color>
@@ -14,23 +15,122 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
+ 
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="3*" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="3"
+                  BackgroundColor="#333"
+                  RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid x:Name="bgLeft"
+                      Grid.Row="0"
+                      Grid.RowSpan="2"
+                      Grid.Column="0"
+                      BackgroundColor="#333">
+                    
+                </Grid>
+                <Grid x:Name="bgCentre"
+                      Grid.Row="0"
+                      Grid.RowSpan="2"
+                      Grid.Column="1"
+                      BackgroundColor="#333">
+
+                </Grid>
+                <Grid x:Name="bgRight"
+                      Grid.Row="0"
+                      Grid.RowSpan="2"
+                      Grid.Column="2"
+                      BackgroundColor="#333">
+
+                </Grid>
+                <Image x:Name="imageLeft" Source="outline_power_settings_new_white_48.png" Style="{StaticResource MenuBarButtonStyle}" Grid.Row="0" Grid.Column="0">
+                    <Image.GestureRecognizers>
+                        
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="On"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       VerticalTextAlignment="Start"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand"
+                       x:Name="labelLeft"
+                       />
+                <Image x:Name="imageCenter" Source="outline_timer_white_48.png" Style="{StaticResource MenuBarButtonStyle}"  Grid.Row="0" Grid.Column="1">
+                    <Image.GestureRecognizers>
+
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="Timer"
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       VerticalTextAlignment="Start"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand"
+                       />
+                <Image x:Name="imageRight" Source="outline_sync_white_48.png" Style="{StaticResource MenuBarButtonStyle}"  Grid.Row="0" Grid.Column="2">
+                    <Image.GestureRecognizers>
+
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="Sync"
+                       Grid.Row="1"
+                       Grid.Column="2"
+                       VerticalTextAlignment="Start"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand"
+                       />
+
+            </Grid>
+            
+
             <colorpicker:ColorWheel x:Name="colourWheel"
                                         ShowLuminositySlider="False"
                                         ShowLuminosityWheel="True"
                                     Padding="15"
-                                        Grid.Row="0"
+                                        Grid.Row="1"
                                         Grid.Column="0"
-                                        Grid.ColumnSpan="2"/>
+                                        Grid.ColumnSpan="3"/>
+            <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="100*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="outline_light_mode_white_48.png" Grid.Column="1" Scale="0.8"/>
+                <Slider x:Name="brightnessSlider" Maximum="255.1" Minimum="0.9"
+                                        MaximumTrackColor="#333" ThumbColor="White" ios:Slider.UpdateOnTap="true"
+                                        Grid.Column="2" />
+            </Grid>
+            
             <Label x:Name="colourLabel"
                        Text="{Binding Source={x:Reference colourWheel}, Path=SelectedColor}"
                        FontSize="0.0001"
@@ -38,11 +138,21 @@
                        Grid.Row="0"
                        Grid.Column="0" />
             <!-- This label is here until we get a ColorChanged event. -->
-            <Picker x:Name="palettesPicker"
-                    Grid.Row="1"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    />
+            <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="100*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="outline_palette_white_48.png" Grid.Column="1" Scale="0.8"/>
+                <Picker x:Name="palettesPicker"
+                        Grid.Column="2" />
+            </Grid>
+            
         </Grid>
     </ContentPage.Content>
 </ContentPage>

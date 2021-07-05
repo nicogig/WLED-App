@@ -9,14 +9,13 @@
              ios:Page.UseSafeArea="true"
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              android:TabbedPage.ToolbarPlacement="Bottom"
+             
              >
-    <TabbedPage.BarBackgroundColor>
-        <Color>#333</Color>
-    </TabbedPage.BarBackgroundColor>
+
     <TabbedPage.SelectedTabColor>
-        <Color>#737373</Color>
+        <Color>#FFFF</Color>
     </TabbedPage.SelectedTabColor>
     <TabbedPage.UnselectedTabColor>
-        <Color>#333</Color>
+        <Color>#585858</Color>
     </TabbedPage.UnselectedTabColor>
 </TabbedPage>

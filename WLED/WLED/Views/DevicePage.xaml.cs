@@ -22,9 +22,26 @@ namespace WLED.Views
             InitializeComponent();
             DeviceURI = pageURL;
             wledDevice = device;
+            InitPage(device);
+            
+        }
+
+        private void InitPage (WLEDDevice device)
+        {
             colourWheel.SelectedColor = wledDevice.ColorCurrent;
+            brightnessSlider.Value = wledDevice.BrightnessCurrent;
+            brightnessSlider.MinimumTrackColor = wledDevice.ColorCurrent;
             palettesPicker.ItemsSource = wledDevice.SupportedPalettes;
             palettesPicker.SelectedIndex = wledDevice.CurrentPalette;
+            if (wledDevice.StateCurrent)
+            {
+                // Device is on
+                bgLeft.BackgroundColor = Color.FromHex("#585858");
+                labelLeft.Text = "Off";
+
+            }
+            
+
         }
 
         

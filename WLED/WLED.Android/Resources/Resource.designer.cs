@@ -17612,16 +17612,148 @@ namespace WLED.Droid
 			public const int notify_panel_notification_icon_bg = 2131165541;
 			
 			// aapt resource value: 0x7F070166
-			public const int test_custom_background = 2131165542;
+			public const int outline_filter_vintage_24 = 2131165542;
 			
 			// aapt resource value: 0x7F070167
-			public const int tooltip_frame_dark = 2131165543;
+			public const int outline_filter_vintage_white_18 = 2131165543;
 			
 			// aapt resource value: 0x7F070168
-			public const int tooltip_frame_light = 2131165544;
+			public const int outline_filter_vintage_white_20 = 2131165544;
 			
 			// aapt resource value: 0x7F070169
-			public const int wled_logo = 2131165545;
+			public const int outline_filter_vintage_white_24 = 2131165545;
+			
+			// aapt resource value: 0x7F07016A
+			public const int outline_filter_vintage_white_36 = 2131165546;
+			
+			// aapt resource value: 0x7F07016B
+			public const int outline_filter_vintage_white_48 = 2131165547;
+			
+			// aapt resource value: 0x7F07016C
+			public const int outline_light_mode_20 = 2131165548;
+			
+			// aapt resource value: 0x7F07016D
+			public const int outline_light_mode_24 = 2131165549;
+			
+			// aapt resource value: 0x7F07016E
+			public const int outline_light_mode_white_18 = 2131165550;
+			
+			// aapt resource value: 0x7F07016F
+			public const int outline_light_mode_white_20 = 2131165551;
+			
+			// aapt resource value: 0x7F070170
+			public const int outline_light_mode_white_24 = 2131165552;
+			
+			// aapt resource value: 0x7F070171
+			public const int outline_light_mode_white_36 = 2131165553;
+			
+			// aapt resource value: 0x7F070172
+			public const int outline_light_mode_white_48 = 2131165554;
+			
+			// aapt resource value: 0x7F070173
+			public const int outline_palette_20 = 2131165555;
+			
+			// aapt resource value: 0x7F070174
+			public const int outline_palette_24 = 2131165556;
+			
+			// aapt resource value: 0x7F070175
+			public const int outline_palette_white_18 = 2131165557;
+			
+			// aapt resource value: 0x7F070176
+			public const int outline_palette_white_20 = 2131165558;
+			
+			// aapt resource value: 0x7F070177
+			public const int outline_palette_white_24 = 2131165559;
+			
+			// aapt resource value: 0x7F070178
+			public const int outline_palette_white_36 = 2131165560;
+			
+			// aapt resource value: 0x7F070179
+			public const int outline_palette_white_48 = 2131165561;
+			
+			// aapt resource value: 0x7F07017A
+			public const int outline_power_settings_new_24 = 2131165562;
+			
+			// aapt resource value: 0x7F07017B
+			public const int outline_power_settings_new_white_18 = 2131165563;
+			
+			// aapt resource value: 0x7F07017C
+			public const int outline_power_settings_new_white_20 = 2131165564;
+			
+			// aapt resource value: 0x7F07017D
+			public const int outline_power_settings_new_white_24 = 2131165565;
+			
+			// aapt resource value: 0x7F07017E
+			public const int outline_power_settings_new_white_36 = 2131165566;
+			
+			// aapt resource value: 0x7F07017F
+			public const int outline_power_settings_new_white_48 = 2131165567;
+			
+			// aapt resource value: 0x7F070180
+			public const int outline_settings_24 = 2131165568;
+			
+			// aapt resource value: 0x7F070181
+			public const int outline_settings_white_18 = 2131165569;
+			
+			// aapt resource value: 0x7F070182
+			public const int outline_settings_white_20 = 2131165570;
+			
+			// aapt resource value: 0x7F070183
+			public const int outline_settings_white_24 = 2131165571;
+			
+			// aapt resource value: 0x7F070184
+			public const int outline_settings_white_36 = 2131165572;
+			
+			// aapt resource value: 0x7F070185
+			public const int outline_settings_white_48 = 2131165573;
+			
+			// aapt resource value: 0x7F070186
+			public const int outline_sync_24 = 2131165574;
+			
+			// aapt resource value: 0x7F070187
+			public const int outline_sync_white_18 = 2131165575;
+			
+			// aapt resource value: 0x7F070188
+			public const int outline_sync_white_20 = 2131165576;
+			
+			// aapt resource value: 0x7F070189
+			public const int outline_sync_white_24 = 2131165577;
+			
+			// aapt resource value: 0x7F07018A
+			public const int outline_sync_white_36 = 2131165578;
+			
+			// aapt resource value: 0x7F07018B
+			public const int outline_sync_white_48 = 2131165579;
+			
+			// aapt resource value: 0x7F07018C
+			public const int outline_timer_24 = 2131165580;
+			
+			// aapt resource value: 0x7F07018D
+			public const int outline_timer_white_18 = 2131165581;
+			
+			// aapt resource value: 0x7F07018E
+			public const int outline_timer_white_20 = 2131165582;
+			
+			// aapt resource value: 0x7F07018F
+			public const int outline_timer_white_24 = 2131165583;
+			
+			// aapt resource value: 0x7F070190
+			public const int outline_timer_white_36 = 2131165584;
+			
+			// aapt resource value: 0x7F070191
+			public const int outline_timer_white_48 = 2131165585;
+			
+			// aapt resource value: 0x7F070192
+			public const int test_custom_background = 2131165586;
+			
+			// aapt resource value: 0x7F070193
+			public const int tooltip_frame_dark = 2131165587;
+			
+			// aapt resource value: 0x7F070194
+			public const int tooltip_frame_light = 2131165588;
+			
+			// aapt resource value: 0x7F070195
+			public const int wled_logo = 2131165589;
 			
 			static Drawable()
 			{
