@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using WLED.Models;
+using Newtonsoft.Json;
 
 namespace WLED
 {
@@ -46,8 +48,24 @@ namespace WLED
             }
         }
 
+        public async Task<string> SendStatusUpdate(string DeviceURI, JSONStateModel jsonStateModel)
+        {
+            string url = DeviceURI + "/json/state";
+            try
+            {
+                var result = await Client.PostAsync(url, new StringContent(
+                JsonConvert.SerializeObject(jsonStateModel), Encoding.UTF8, "application/json"));
+                if (result.IsSuccessStatusCode)
+                    return await result.Content.ReadAsStringAsync();
+                else
+                    return "err";
+            }
+            catch (Exception)
+            {
+                return "err";
+            }
+        }
 
-        
 
         public async Task<string> Send_WLED_API_Call(string DeviceURI, string API_Call)
         {

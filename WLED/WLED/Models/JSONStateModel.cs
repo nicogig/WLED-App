@@ -4,8 +4,9 @@ using System.Text;
 
 namespace WLED.Models
 {
-    class JSONStateModel
+    public class JSONStateModel
     {
+        
         public bool on { get; set; }
         public int bri { get; set; }
         public int transition { get; set; }
@@ -15,7 +16,7 @@ namespace WLED.Models
         public UDPSync udpn { get; set; }
         public int lor { get; set; }
         public int mainseg { get; set; }
-        public IList<SegInfo> seg { get; set; }
+        public List<SegInfo> seg { get; set; }
     }
 
     public class NightLight
@@ -43,7 +44,7 @@ namespace WLED.Models
         public int of { get; set; }
         public bool on { get; set; }
         public int bri { get; set; }
-        public IList<IList<int>> col { get; set; }
+        public List<List<int>> col { get; set; }
         public int fx { get; set; }
         public int sx { get; set; }
         public int ix { get; set; }

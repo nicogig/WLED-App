@@ -11,7 +11,7 @@
     <item name="windowActionBar">false</item>
     <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette -->
     <!-- colorPrimary is used for the default action bar background -->
-    <item name="colorPrimary">#555</item>
+    <item name="colorPrimary">#333</item>
     <!-- colorPrimaryDark is used for the status bar -->
     <item name="colorPrimaryDark">#222</item>
     <!-- colorAccent is used as the default value for colorControlActivated

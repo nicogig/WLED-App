@@ -52,8 +52,8 @@ namespace WLED.UWP
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                var rendererAssemblies = ColorPicker.UWP.ColorPickerEffects.GetRendererAssemblies();
-                Xamarin.Forms.Forms.Init(e, rendererAssemblies);
+                
+                Xamarin.Forms.Forms.Init(e);
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {

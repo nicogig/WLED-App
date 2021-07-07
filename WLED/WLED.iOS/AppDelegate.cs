@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ColorPicker.iOS;
 using Foundation;
 using UIKit;
+using Xamarin.Forms;
 
 namespace WLED.iOS
 {
@@ -24,7 +24,7 @@ namespace WLED.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-            ColorPickerEffects.Init();
+            var _ = new TouchTracking.Forms.iOS.TouchEffect();
 
             return base.FinishedLaunching(app, options);
         }

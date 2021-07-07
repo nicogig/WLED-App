@@ -18,7 +18,7 @@
     </ContentPage.Resources>
 
     <NavigationPage.TitleView>
-        <Grid BackgroundColor="#333">
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="45" />
             </Grid.RowDefinitions>
@@ -27,15 +27,15 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="65" />
             </Grid.ColumnDefinitions>
-            <Image x:Name="imageLeft" Source="icon_bin.png" Style="{StaticResource MenuBarButtonStyle}" BackgroundColor="#333" Grid.Column="0">
+            <Image x:Name="imageLeft" Source="icon_bin.png"  Grid.Column="0">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnDeleteButtonTapped" />
                 </Image.GestureRecognizers>
             </Image>
-            <Image Source="wled_logo.png" Style="{StaticResource MenuBarButtonStyle}" BackgroundColor="#333" Grid.Column="1">
+            <Image Source="wled_logo.png"  Grid.Column="1">
                 
             </Image>
-            <Image x:Name="imageRight" Source="icon_add.png"  Style="{StaticResource MenuBarButtonStyle}" BackgroundColor="#333" Grid.Column="2">
+            <Image x:Name="imageRight" Source="icon_add.png"  Grid.Column="2">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnAddButtonTapped" />
                 </Image.GestureRecognizers>

@@ -1,16 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:colorpicker="clr-namespace:ColorPicker;assembly=ColorPicker"
              xmlns:wled="clr-namespace:WLED"
              x:Class="WLED.Views.DevicePage"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:colorpicker="clr-namespace:ColorPicker;assembly=ColorPicker"
              ios:Page.UseSafeArea="true"
              Title="Colors"
              IconImageSource="outline_palette_white_48.png">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="backgroundColor">#ffff</Color>
+            <Color x:Key="backgroundColor">#333</Color>
+            <Style x:Key="MenuBarTextStyle" TargetType="Label">
+                <Setter Property="Grid.Row" Value="1" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalTextAlignment" Value="Start" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="BackgroundColor" Value="#333" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+            <Style x:Key="MenuBarImageButtonStyle" TargetType="ImageButton">
+                <Setter Property="Grid.Row" Value="0" />
+                <Setter Property="BackgroundColor" Value="#333" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="CornerRadius" Value="0" />
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -29,92 +46,45 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Grid Grid.Row="0"
-                  Grid.Column="0"
-                  Grid.ColumnSpan="3"
-                  BackgroundColor="#333"
-                  RowSpacing="0">
+
+            <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" RowSpacing="0" ColumnSpacing="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="3*" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="10*" />
                 </Grid.ColumnDefinitions>
-                <Grid x:Name="bgLeft"
-                      Grid.Row="0"
-                      Grid.RowSpan="2"
-                      Grid.Column="0"
-                      BackgroundColor="#333">
-                    
-                </Grid>
-                <Grid x:Name="bgCentre"
-                      Grid.Row="0"
-                      Grid.RowSpan="2"
-                      Grid.Column="1"
-                      BackgroundColor="#333">
 
-                </Grid>
-                <Grid x:Name="bgRight"
-                      Grid.Row="0"
-                      Grid.RowSpan="2"
-                      Grid.Column="2"
-                      BackgroundColor="#333">
 
-                </Grid>
-                <Image x:Name="imageLeft" Source="outline_power_settings_new_white_48.png" Style="{StaticResource MenuBarButtonStyle}" Grid.Row="0" Grid.Column="0">
-                    <Image.GestureRecognizers>
-                        
-                    </Image.GestureRecognizers>
-                </Image>
-                <Label Text="On"
-                       Grid.Row="1"
-                       Grid.Column="0"
-                       VerticalTextAlignment="Start"
-                       HorizontalTextAlignment="Center"
-                       VerticalOptions="CenterAndExpand"
-                       HorizontalOptions="CenterAndExpand"
-                       x:Name="labelLeft"
-                       />
-                <Image x:Name="imageCenter" Source="outline_timer_white_48.png" Style="{StaticResource MenuBarButtonStyle}"  Grid.Row="0" Grid.Column="1">
-                    <Image.GestureRecognizers>
 
-                    </Image.GestureRecognizers>
-                </Image>
-                <Label Text="Timer"
-                       Grid.Row="1"
-                       Grid.Column="1"
-                       VerticalTextAlignment="Start"
-                       HorizontalTextAlignment="Center"
-                       VerticalOptions="CenterAndExpand"
-                       HorizontalOptions="CenterAndExpand"
-                       />
-                <Image x:Name="imageRight" Source="outline_sync_white_48.png" Style="{StaticResource MenuBarButtonStyle}"  Grid.Row="0" Grid.Column="2">
-                    <Image.GestureRecognizers>
+                <ImageButton     Source="outline_timer_white_48.png"
+                                 Grid.Column="1"
+                                 Style="{StaticResource MenuBarImageButtonStyle}" />
+                <Label     x:Name="labelCenter"
+                           Text="Timer"
+                           Grid.Column="1"
+                           Style="{StaticResource MenuBarTextStyle}" />
 
-                    </Image.GestureRecognizers>
-                </Image>
-                <Label Text="Sync"
-                       Grid.Row="1"
-                       Grid.Column="2"
-                       VerticalTextAlignment="Start"
-                       HorizontalTextAlignment="Center"
-                       VerticalOptions="CenterAndExpand"
-                       HorizontalOptions="CenterAndExpand"
-                       />
+
+
+                <ImageButton     Source="outline_power_settings_new_white_48.png"
+                                 Grid.Column="0"
+                                 Style="{StaticResource MenuBarImageButtonStyle}"
+                                 Clicked="TogglePower"
+                                 x:Name="bgLeft"/>
+                <Label     x:Name="labelLeft"
+                           Grid.Column="0"
+                           Text="On" 
+                           Style="{StaticResource MenuBarTextStyle}" />
 
             </Grid>
-            
 
-            <colorpicker:ColorWheel x:Name="colourWheel"
-                                        ShowLuminositySlider="False"
-                                        ShowLuminosityWheel="True"
-                                    Padding="15"
-                                        Grid.Row="1"
-                                        Grid.Column="0"
-                                        Grid.ColumnSpan="3"/>
+            <colorpicker:ColorWheel x:Name="colourWheel" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
+
+
+
             <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -130,14 +100,10 @@
                                         MaximumTrackColor="#333" ThumbColor="White" ios:Slider.UpdateOnTap="true"
                                         Grid.Column="2" />
             </Grid>
+
             
-            <Label x:Name="colourLabel"
-                       Text="{Binding Source={x:Reference colourWheel}, Path=SelectedColor}"
-                       FontSize="0.0001"
-                       TextColor="{DynamicResource backgroundColor}"
-                       Grid.Row="0"
-                       Grid.Column="0" />
-            <!-- This label is here until we get a ColorChanged event. -->
+
+            
             <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -152,6 +118,7 @@
                 <Picker x:Name="palettesPicker"
                         Grid.Column="2" />
             </Grid>
+            
             
         </Grid>
     </ContentPage.Content>

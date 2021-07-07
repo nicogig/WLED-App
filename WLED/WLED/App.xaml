@@ -3,13 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WLED.App">
     <Application.Resources>
-        <!--Button image style-->
-        <Style x:Key="MenuBarButtonStyle" TargetType="Image">
-            <Setter Property="Scale" Value="0.8" />
-            <Setter Property="Aspect" Value="AspectFit" />
-            <Setter Property="HorizontalOptions" Value="Center" />
-            <Setter Property="VerticalOptions" Value="FillAndExpand" />
-            <Setter Property="Grid.Row" Value="0" />
-        </Style>
+        
     </Application.Resources>
 </Application>

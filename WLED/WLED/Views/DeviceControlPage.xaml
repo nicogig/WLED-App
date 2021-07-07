@@ -4,13 +4,11 @@
              xmlns:wled="clr-namespace:WLED"
              xmlns:wledviews="clr-namespace:WLED.Views"
              x:Class="WLED.DeviceControlPage"
-             BackgroundColor="#222"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
              ios:Page.UseSafeArea="true"
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              android:TabbedPage.ToolbarPlacement="Bottom"
-             
-             >
+             Title="Placeholder" >
 
     <TabbedPage.SelectedTabColor>
         <Color>#FFFF</Color>
