@@ -46,30 +46,51 @@ namespace WLED.Views
                 bgLeft.BackgroundColor = Color.FromHex("#585858");
                 labelLeft.BackgroundColor = Color.FromHex("#585858");
                 labelLeft.Text = "Off";
+                nightLight.IsEnabled = true;
+                brightnessSlider.IsEnabled = true;
+                palettesPicker.IsEnabled = true;
+                colourWheel.IsEnabled = true;
+                if (wledDevice.LastJSONStateModel.nl.on)
+                {
+                    // NightLight is On
+                    nightLight.BackgroundColor = Color.FromHex("#585858");
+                    labelCenter.BackgroundColor = Color.FromHex("#585858");
+                }
+                else
+                {
+                    nightLight.BackgroundColor = Color.FromHex("#333");
+                    labelCenter.BackgroundColor = Color.FromHex("#333");
+                }
+            }
+            else
+            {
+                // Device is not on
+                bgLeft.BackgroundColor = Color.FromHex("#333");
+                labelLeft.BackgroundColor = Color.FromHex("#333");
+                labelLeft.Text = "On";
+                nightLight.BackgroundColor = Color.FromHex("#333");
+                labelCenter.BackgroundColor = Color.FromHex("#333");
+                // Disable all controls, as device isn't on
+                nightLight.IsEnabled = false;
+                brightnessSlider.IsEnabled = false;
+                palettesPicker.IsEnabled = false;
+                colourWheel.IsEnabled = false;
             }
         }
 
         private async void TogglePower (object sender, EventArgs e)
         {
             JSONStateModel model = wledDevice.LastJSONStateModel;
-            model.on = !wledDevice.StateCurrent;
+            bool previousState = model.on;
+            model.on = !previousState;
             bool callResult = await wledDevice.SendStateUpdate(model);
             if (callResult)
             {
                 wledDevice.StateCurrent = !wledDevice.StateCurrent;
-                wledDevice.LastJSONStateModel.on = wledDevice.StateCurrent;
-                if (wledDevice.StateCurrent)
+                bool updatedJsonResult = await wledDevice.GetStatus();
+                if (updatedJsonResult)
                 {
-                    // Device is on
-                    bgLeft.BackgroundColor = Color.FromHex("#585858");
-                    labelLeft.BackgroundColor = Color.FromHex("#585858");
-                    labelLeft.Text = "Off";
-                }
-                else
-                {
-                    bgLeft.BackgroundColor = Color.FromHex("#333");
-                    labelLeft.BackgroundColor = Color.FromHex("#333");
-                    labelLeft.Text = "On";
+                    InitPage(wledDevice);
                 }
             }
         }
@@ -91,6 +112,58 @@ namespace WLED.Views
                 wledDevice.LastJSONStateModel = model;
                 wledDevice.ColorCurrent = newColor;
                 brightnessSlider.MinimumTrackColor = wledDevice.ColorCurrent;
+            }
+
+        }
+
+        private async void brightnessSlider_DragCompleted(object sender, EventArgs e)
+        {
+            if ((int)brightnessSlider.Value != wledDevice.BrightnessCurrent)
+            {
+                JSONStateModel model = wledDevice.LastJSONStateModel;
+                model.bri = (int)brightnessSlider.Value;
+                Console.WriteLine(JsonConvert.SerializeObject(model));
+                bool callResult = await wledDevice.SendStateUpdate(model);
+                if (callResult)
+                {
+                    // Request updated JSON model
+                    bool updatedJsonResult = await wledDevice.GetStatus();
+                    if (updatedJsonResult)
+                    {
+                        InitPage(wledDevice);
+                    }
+                }
+            }
+        }
+
+        private async void nightLight_Clicked(object sender, EventArgs e)
+        {
+            JSONStateModel model = wledDevice.LastJSONStateModel;
+            model.nl.on = !model.nl.on;
+            bool callResult = await wledDevice.SendStateUpdate(model);
+            if (callResult)
+            {
+                bool updatedJsonResult = await wledDevice.GetStatus();
+                if (updatedJsonResult)
+                {
+                    InitPage(wledDevice);
+                }
+            }
+
+        }
+
+        private async void palettesPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            JSONStateModel model = wledDevice.LastJSONStateModel;
+            model.seg[model.mainseg].pal = palettesPicker.SelectedIndex;
+            bool callResult = await wledDevice.SendStateUpdate(model);
+            if (callResult)
+            {
+                bool updatedJsonResult = await wledDevice.GetStatus();
+                if (updatedJsonResult)
+                {
+                    InitPage(wledDevice);
+                }
             }
 
         }

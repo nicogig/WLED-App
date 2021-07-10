@@ -59,11 +59,13 @@
 
 
 
-                <ImageButton     Source="outline_timer_white_48.png"
+                <ImageButton     Source="baseline_nightlight_white_48.png"
                                  Grid.Column="1"
+                                 x:Name="nightLight"
+                                 Clicked="nightLight_Clicked"
                                  Style="{StaticResource MenuBarImageButtonStyle}" />
                 <Label     x:Name="labelCenter"
-                           Text="Timer"
+                           Text="NightLight"
                            Grid.Column="1"
                            Style="{StaticResource MenuBarTextStyle}" />
 
@@ -97,8 +99,9 @@
                 </Grid.ColumnDefinitions>
                 <Image Source="outline_light_mode_white_48.png" Grid.Column="1" Scale="0.8"/>
                 <Slider x:Name="brightnessSlider" Maximum="255.1" Minimum="0.9"
-                                        MaximumTrackColor="#333" ThumbColor="White" ios:Slider.UpdateOnTap="true"
-                                        Grid.Column="2" />
+                        MaximumTrackColor="#333" ThumbColor="White" ios:Slider.UpdateOnTap="true"
+                        Grid.Column="2"
+                        DragCompleted="brightnessSlider_DragCompleted"/>
             </Grid>
 
             
@@ -116,7 +119,8 @@
                 </Grid.ColumnDefinitions>
                 <Image Source="outline_palette_white_48.png" Grid.Column="1" Scale="0.8"/>
                 <Picker x:Name="palettesPicker"
-                        Grid.Column="2" />
+                        Grid.Column="2"
+                        SelectedIndexChanged="palettesPicker_SelectedIndexChanged" />
             </Grid>
             
             

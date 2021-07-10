@@ -47,6 +47,7 @@ namespace WLED
                     ObservableCollection<WLEDDevice> fromPreferences = Serialization.Deserialize(devices);
                     if (fromPreferences != null) listview.DeviceList = fromPreferences;
                 }
+                listview.RefreshAll();
             }
         }
 
