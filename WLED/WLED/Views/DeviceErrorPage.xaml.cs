@@ -6,18 +6,15 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using WLED.Models;
 
 namespace WLED.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DeviceSettingsPage : ContentPage
+    public partial class DeviceErrorPage : ContentPage
     {
-        WLEDDevice wledDevice;
-        public DeviceSettingsPage(WLEDDevice device)
+        public DeviceErrorPage()
         {
             InitializeComponent();
-            wledDevice = device;
         }
     }
 }

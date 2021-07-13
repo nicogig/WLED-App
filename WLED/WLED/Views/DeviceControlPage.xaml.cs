@@ -18,9 +18,17 @@ namespace WLED
         {
             InitializeComponent();
             this.Title = device.Name;
-            this.Children.Add(new DevicePage(pageURL, device));
-            this.Children.Add(new DeviceEffectsPage(pageURL, device));
-            this.Children.Add(new DeviceSettingsPage());
+            if (device.CurrentStatus == DeviceStatus.Default)
+            {
+                Children.Add(new DevicePage(pageURL, device));
+                Children.Add(new DeviceEffectsPage(pageURL, device));
+                Children.Add(new DeviceSettingsPage(device));
+            }
+            else
+            {
+                Children.Add(new DeviceErrorPage());
+            }
+            
         }
     }
 }
