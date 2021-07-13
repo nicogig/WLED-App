@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WLED.Models
 {
-    class JSONInfoModel
+    public class JSONInfoModel
     {
         public string ver { get; set; }
         public int vid { get; set; }

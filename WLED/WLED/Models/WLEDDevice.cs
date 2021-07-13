@@ -20,9 +20,12 @@ namespace WLED
         private DeviceStatus status = DeviceStatus.Default;                     //Current connection status
         private bool stateCurrent = false;                                      //Is the light currently on?
         private bool isEnabled = true;                                          //Disabled devices don't get polled or show up in the list
+        private bool wasDeviceUpdated = false;
         private double brightnessReceived = 0.9, brightnessCurrent = 0.9;       //There are two vars for brightness to discern API responses from slider updates
         private List<string> supportedPalettes;
+        private List<string> supportedEffects;
         private JSONStateModel lastJSONStateModel;
+        private JSONInfoModel lastInfoModel;
 
         [XmlElement("url")]
         public string NetworkAddress
@@ -137,6 +140,9 @@ namespace WLED
             }
         }
 
+        [XmlIgnore]
+        public bool WasDeviceUpdated { get { return wasDeviceUpdated;} set { wasDeviceUpdated = value; } }
+
         [XmlElement("pal")]
         public List<string> SupportedPalettes 
         { 
@@ -150,10 +156,29 @@ namespace WLED
             } 
         }
 
+        [XmlElement("eff")]
+        public List<string> SupportedEffects
+        {
+            get
+            {
+                return supportedEffects;
+            }
+            set
+            {
+                supportedEffects = value;
+            }
+        }
+
         [XmlIgnore]
         public JSONStateModel LastJSONStateModel
         {
             get { return lastJSONStateModel; } set { lastJSONStateModel = value; }
+        }
+
+        [XmlElement("info")]
+        public JSONInfoModel LastJSONInfoModel
+        {
+            get { return lastInfoModel; } set { lastInfoModel = value; }
         }
 
 
@@ -224,10 +249,42 @@ namespace WLED
             return false;
         }
 
-        public async Task<bool> InitDevice() //fetches updated values from WLED device
+        public async Task<bool> InitDevice() // Fetch values after device is first added
         {
             if (!IsEnabled) return false;
-            return await GetInfo() && await GetStatus() && await GetPalettesInfo();
+            string response = await MakeConnection("");
+            if (response == null || response == "err") return false;
+            JSONMainModel model = new JSONMainModel();
+            try
+            {
+                model = JsonConvert.DeserializeObject<JSONMainModel>(response); 
+            }
+            catch (Exception)
+            {
+                CurrentStatus = DeviceStatus.Error;
+                return false;
+            }
+            JSONInfoModel jsonInfoModel = model.info;
+            JSONStateModel jsonStateModel = model.state;
+            LastJSONStateModel = jsonStateModel;
+            StateCurrent = jsonStateModel.on;
+            if (jsonStateModel.bri > 0 && jsonStateModel.bri != BrightnessCurrent)
+            {
+                brightnessReceived = jsonStateModel.bri;
+                BrightnessCurrent = jsonStateModel.bri;
+                OnPropertyChanged("BrightnessCurrent");
+            }
+            SupportedPalettes = model.palettes;
+            SupportedEffects = model.effects;
+            if (!NameIsCustom) Name = jsonInfoModel.name;
+            LastJSONInfoModel = jsonInfoModel;
+            int mainseg = jsonStateModel.mainseg;
+            SegInfo segInfos = jsonStateModel.seg[mainseg];
+            IList<int> colorIndexesPrimary = segInfos.col[0];
+            ColorCurrent = Color.FromRgb(colorIndexesPrimary[0], colorIndexesPrimary[1], colorIndexesPrimary[2]);
+            CurrentPalette = segInfos.pal;
+            CurrentStatus = DeviceStatus.Default;
+            return true;
         }
 
         public async Task<bool> GetPalettesInfo()
@@ -238,6 +295,23 @@ namespace WLED
             try
             {
                 SupportedPalettes = JsonConvert.DeserializeObject<List<string>>(response);
+            }
+            catch (Exception)
+            {
+                CurrentStatus = DeviceStatus.Error;
+                return false;
+            }
+            return true;
+        }
+
+        public async Task<bool> GetEffectsInfo()
+        {
+            string response = await MakeConnection("effects");
+            if (response == null || response == "err") return false;
+
+            try
+            {
+                SupportedEffects = JsonConvert.DeserializeObject<List<string>>(response);
             }
             catch (Exception)
             {
@@ -264,6 +338,12 @@ namespace WLED
             }
             CurrentStatus = DeviceStatus.Default;
             if (!NameIsCustom) Name = jsonInfoModel.name;
+            if (lastInfoModel != null && lastInfoModel.vid != jsonInfoModel.vid)
+            {
+                // Version ID has changed, device was updated. It is now a good idea to surface this so that we can use it later.
+                wasDeviceUpdated = true;
+            }
+            lastInfoModel = jsonInfoModel;
 
             return true;
         }
