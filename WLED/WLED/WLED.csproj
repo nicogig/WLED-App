@@ -55,4 +55,8 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Settings\" />
+  </ItemGroup>
 </Project>

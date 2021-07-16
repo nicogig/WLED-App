@@ -18,6 +18,10 @@ namespace WLED.Views
         {
             InitializeComponent();
             wledDevice = device;
+            deviceBrand.Text = device.LastJSONInfoModel.brand + " " + device.LastJSONInfoModel.product;
+            deviceVersion.Text = "v. " + device.LastJSONInfoModel.ver;
+            deviceAddress.Text = device.LastJSONInfoModel.mac.ToUpper();
+            listView.ItemsSource = new[] { "WiFi Setup", "LED Preferences", "Sync Interfaces", "Time & Macros", "Security & Updates" };
         }
     }
 }

@@ -4,11 +4,57 @@
              x:Class="WLED.Views.DeviceSettingsPage"
              Title="Settings"
              IconImageSource="outline_settings_white_48.png">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="10*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" BackgroundColor="#333" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="20*" />
+                </Grid.ColumnDefinitions>
+                <Image Grid.Row="0" Grid.RowSpan="5" Grid.Column="1" Source="circle_logo.png" Scale="0.8" />
+                <Label Grid.Row="1" 
+                       Grid.Column="2" 
+                       Text="Device Name" 
+                       x:Name="deviceBrand"
+                       Style="{StaticResource LabelStyle}" />
+                <Label Grid.Row="2"
+                       Grid.Column="2"
+                       Text="version"
+                       x:Name="deviceVersion"
+                       Style="{StaticResource LabelStyle}"/>
+                <Label Grid.Row="3"
+                       Grid.Column="2"
+                       Text="MAC Address"
+                       x:Name="deviceAddress"
+                       Style="{StaticResource LabelStyle}"/>
+            </Grid>
+            <ListView Grid.Row="1"
+                      x:Name="listView"></ListView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
