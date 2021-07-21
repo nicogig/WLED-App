@@ -32,6 +32,9 @@ namespace WLED.Views
             InitializeComponent();
 
             DeviceList = new ObservableCollection<WLEDDevice>();
+            NavigationPage.SetHasBackButton(this, false);
+            NavigationPage.SetBackButtonTitle(this, "");
+
 
         }
 

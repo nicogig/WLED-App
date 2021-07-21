@@ -5,7 +5,8 @@
              xmlns:wledviews="clr-namespace:WLED.Views"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              x:Class="WLED.Views.DevicesListView"
-             ios:Page.UseSafeArea="True">
+             ios:Page.UseSafeArea="True"
+             NavigationPage.HasBackButton="False">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -18,7 +19,7 @@
     </ContentPage.Resources>
 
     <NavigationPage.TitleView>
-        <Grid BackgroundColor="#333">
+        <Grid BackgroundColor="#333" Margin="-15,0,0,0" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="45" />
             </Grid.RowDefinitions>

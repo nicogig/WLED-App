@@ -54,7 +54,8 @@
                        Style="{StaticResource LabelStyle}"/>
             </Grid>
             <ListView Grid.Row="1"
-                      x:Name="listView"></ListView>
+                      x:Name="listView"
+                      ItemTapped="listView_ItemTapped"></ListView>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

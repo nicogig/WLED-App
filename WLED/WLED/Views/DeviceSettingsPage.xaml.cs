@@ -14,6 +14,7 @@ namespace WLED.Views
     public partial class DeviceSettingsPage : ContentPage
     {
         WLEDDevice wledDevice;
+        List<string> settingsNames = new List<string>() { "wifi", "leds", "sync", "time", "sec" };
         public DeviceSettingsPage(WLEDDevice device)
         {
             InitializeComponent();
@@ -22,6 +23,15 @@ namespace WLED.Views
             deviceVersion.Text = "v. " + device.LastJSONInfoModel.ver;
             deviceAddress.Text = device.LastJSONInfoModel.mac.ToUpper();
             listView.ItemsSource = new[] { "WiFi Setup", "LED Preferences", "Sync Interfaces", "Time & Macros", "Security & Updates" };
+        }
+
+        private async void listView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            int itemIndex = e.ItemIndex;
+            listView.SelectedItem = null;
+            string urlToSend = "http://" + wledDevice.NetworkAddress + "/settings/" + settingsNames[itemIndex];
+            await Navigation.PushAsync(new DeviceWebView(urlToSend, wledDevice));
+
         }
     }
 }
