@@ -86,7 +86,9 @@ namespace WLED
                 if (brightnessCurrent != brightnessReceived) //only send if value was changed by slider
                 {
                     byte toSend = (byte)Math.Round(brightnessCurrent);
-                    RateLimitedSender.SendAPICall(this, "A=" + toSend);
+                    JSONStateModel model = this.LastJSONStateModel;
+                    model.bri = toSend;
+                    RateLimitedSender.SendAPICall(this, model);
                 }
             }
             get { return brightnessCurrent; }

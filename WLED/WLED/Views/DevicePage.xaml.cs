@@ -95,7 +95,7 @@ namespace WLED.Views
             }
         }
 
-        private async void colourWheel_SelectedColorChanged(object sender, ColorChangedEventArgs e)
+        private void colourWheel_SelectedColorChanged(object sender, ColorChangedEventArgs e)
         {
             
             // Colour is changed, proceed to obtain and update
@@ -105,14 +105,11 @@ namespace WLED.Views
             int newGreen = Convert.ToInt32(newColor.G * 255);
             int newBlue = Convert.ToInt32(newColor.B * 255);
             model.seg[model.mainseg].col[0] = new List<int>() { newRed, newGreen, newBlue };
-            bool callResult = await wledDevice.SendStateUpdate(model);
-            if (callResult)
-            {
-                // Call was successful, so update last call to the one we just sent
-                wledDevice.LastJSONStateModel = model;
-                wledDevice.ColorCurrent = newColor;
-                brightnessSlider.MinimumTrackColor = wledDevice.ColorCurrent;
-            }
+            //bool callResult = await wledDevice.SendStateUpdate(model);
+            RateLimitedSender.SendAPICall(wledDevice, model);
+            wledDevice.LastJSONStateModel = model;
+            wledDevice.ColorCurrent = newColor;
+            brightnessSlider.MinimumTrackColor = wledDevice.ColorCurrent;
 
         }
 
@@ -122,7 +119,6 @@ namespace WLED.Views
             {
                 JSONStateModel model = wledDevice.LastJSONStateModel;
                 model.bri = (int)brightnessSlider.Value;
-                Console.WriteLine(JsonConvert.SerializeObject(model));
                 bool callResult = await wledDevice.SendStateUpdate(model);
                 if (callResult)
                 {

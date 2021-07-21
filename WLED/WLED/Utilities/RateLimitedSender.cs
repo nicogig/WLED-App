@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
+using WLED.Models;
 
 namespace WLED
 {
@@ -11,7 +12,7 @@ namespace WLED
     {
         private static Timer timer;
         private static WLEDDevice target;
-        static string toSend;
+        static JSONStateModel toSend;
         static bool alreadySent = true;
 
         static RateLimitedSender()
@@ -20,18 +21,18 @@ namespace WLED
             timer.Elapsed += OnWaitPeriodOver;
         }
 
-        public static void SendAPICall(WLEDDevice t, string call)
+        public static void SendAPICall(WLEDDevice device, JSONStateModel model)
         {
             if (timer.Enabled)
             {
                 //Save to send once waiting period over
-                target = t;
-                toSend = call;
+                target = device;
+                toSend = model;
                 alreadySent = false;
                 return;
             }
             timer.Start();
-            t?.SendAPICall(call);
+            device?.SendStateUpdate(model);
             alreadySent = true;
         }
 
@@ -40,7 +41,7 @@ namespace WLED
             timer.Stop();
             if (!alreadySent)
             {
-                target?.SendAPICall(toSend);
+                target?.SendStateUpdate(toSend);
                 alreadySent = true;
                 timer.Start();
             }
