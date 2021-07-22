@@ -2,7 +2,7 @@
 
 A brand new app for Android to discover and control your [WLED](https://github.com/Aircoookie/WLED) devices easily!
 
-![Screenshots of various menus in the WLED App, rendered on a Galaxy S20.](.\app-screenshots.png)
+![Screenshots of various menus in the WLED App, rendered on a Galaxy S20.](app-screenshots.png)
 
 iOS and UWP support coming soon.
 
