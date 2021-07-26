@@ -6,20 +6,27 @@
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              x:Class="WLED.Views.DevicesListView"
              ios:Page.UseSafeArea="True"
-             NavigationPage.HasBackButton="False">
+             NavigationPage.HasBackButton="False"
+             Style="{StaticResource PageStyle}">
 
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="LabelStyle" TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkTextColor}, Light={StaticResource LightTextColor}}" />
             </Style>
+            <Style x:Key="NavBarImage" TargetType="Image">
+                <Setter Property="Scale" Value="0.6" />
+                
+            </Style>
+            
             
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <NavigationPage.TitleView>
-        <Grid BackgroundColor="#333" Margin="-15,0,0,0" >
+        <Grid BackgroundColor="{AppThemeBinding Dark={StaticResource DarkAccentColor}, Light={StaticResource LightBackgroundColor}}" Margin="-15,0,0,0" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="45" />
             </Grid.RowDefinitions>
@@ -28,13 +35,13 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="65" />
             </Grid.ColumnDefinitions>
-            <Image x:Name="imageLeft" Source="baseline_delete_white_24.png" Scale="0.6"  Grid.Column="0">
+            <Image x:Name="imageLeft" Source="{AppThemeBinding Dark=baseline_delete_white_24, Light=baseline_delete_black_24}" Scale="0.6"  Grid.Column="0">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnDeleteButtonTapped" />
                 </Image.GestureRecognizers>
             </Image>
             <Image Source="wled_logo_akemi.png" Scale="0.8" Grid.Column="1" />
-            <Image x:Name="imageRight" Source="baseline_add_white_24.png" Scale="0.6" Grid.Column="2">
+            <Image x:Name="imageRight" Source="baseline_add_white_24" Scale="0.6" Grid.Column="2">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnAddButtonTapped" />
                 </Image.GestureRecognizers>

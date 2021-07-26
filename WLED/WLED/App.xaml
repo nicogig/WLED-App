@@ -3,6 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WLED.App">
     <Application.Resources>
+        <Color x:Key="DarkAccentColor">#333333</Color>
+        <Color x:Key="DarkBackgroundColor">#222222</Color>
+        <Color x:Key="DarkButtonPressed">#585858</Color>
+        <Color x:Key="DarkTextColor">#FFFFFF</Color>
         
+        <Color x:Key="LightBackgroundColor">#FFFFFF</Color>
+        <Color x:Key="LightTextColor">#222222</Color>
+        <Style x:Key="PageStyle" TargetType="ContentPage">
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource DarkBackgroundColor}, Light={StaticResource LightBackgroundColor}}" />
+        </Style>
     </Application.Resources>
 </Application>
