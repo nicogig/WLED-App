@@ -14,19 +14,13 @@
             <Style x:Key="LabelStyle" TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
-                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkTextColor}, Light={StaticResource LightTextColor}}" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkPrimaryTextColor}, Light={StaticResource LightPrimaryTextColor}}" />
             </Style>
-            <Style x:Key="NavBarImage" TargetType="Image">
-                <Setter Property="Scale" Value="0.6" />
-                
-            </Style>
-            
-            
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <NavigationPage.TitleView>
-        <Grid BackgroundColor="{AppThemeBinding Dark={StaticResource DarkAccentColor}, Light={StaticResource LightBackgroundColor}}" Margin="-15,0,0,0" >
+        <Grid Style="{StaticResource NavigationBarGrid}" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="45" />
             </Grid.RowDefinitions>
@@ -76,8 +70,10 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout  IsVisible="{Binding IsEnabled}" HeightRequest="{Binding ListHeight}">
-                            <Grid Padding="6" Margin="6,2" >
+                        <StackLayout  IsVisible="{Binding IsEnabled}" HeightRequest="{Binding ListHeight}"
+                                      BackgroundColor="{AppThemeBinding Light={StaticResource LightPageBackgroundColor}, Dark={StaticResource DarkPageBackgroundColor}}">
+                            <Grid Padding="6" Margin="6,2" 
+                                  BackgroundColor="{AppThemeBinding Light={StaticResource LightPageBackgroundColor}, Dark={StaticResource DarkPageBackgroundColor}}">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="35" />
                                     <RowDefinition Height="25" />
@@ -88,19 +84,23 @@
                                     <ColumnDefinition Width="65" />
                                 </Grid.ColumnDefinitions>
                                 <Label Text="{Binding Name}" 
-                                       Font="Bold, 25" TextColor="white"
+                                       Style="{StaticResource BoldMediumLabelStyle}"
                                        Grid.Row="0" Grid.Column="0" />
                                 <Label Text="{Binding Status}" 
-                                       Font="18" TextColor="white"
+                                       Style="{StaticResource SmallLabelStyle}"
                                        Grid.Row="1" Grid.Column="0" />
+                                <!-- TODO: Redo button -->
                                 <Button Clicked="OnPowerButtonTapped" 
-                                        BorderRadius="32" BackgroundColor="{Binding StateColor}" BorderColor="White" BorderWidth="4"
+                                        BorderRadius="32" BackgroundColor="{AppThemeBinding Light={StaticResource LightPageBackgroundColor}, Dark={StaticResource DarkPageBackgroundColor}}" BorderColor="White" BorderWidth="4"
                                         Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" />
                                 <Image Source="icon_power.png" Scale ="0.8" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" InputTransparent="True" BackgroundColor="Transparent"/>
 
                                 <Slider Maximum="255.1" Minimum="0.9" Value="{Binding BrightnessCurrent, Mode=TwoWay}"
-                                        MinimumTrackColor="{Binding ColorCurrent}" MaximumTrackColor="#333" ThumbColor="White" ios:Slider.UpdateOnTap="true"
-                                        Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" />
+                                        MinimumTrackColor="{Binding ColorCurrent}" MaximumTrackColor="#333" 
+                                        ThumbColor="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" 
+                                        ios:Slider.UpdateOnTap="true"
+                                        Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                        BackgroundColor="{AppThemeBinding Light={StaticResource LightPageBackgroundColor}, Dark={StaticResource DarkPageBackgroundColor}}"/>
                             </Grid>
                         </StackLayout>
                     </ViewCell>

@@ -103,15 +103,33 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <ImageAsset Include="Assets.xcassets\baseline_add_white_24.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\baseline_delete_white_24.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\baseline_done_white_24.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\baseline_nightlight_white_48.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_48.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\outline_light_mode_white_48.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\outline_palette_white_48.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_white_48.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\outline_settings_white_48.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\baseline_add_white_24.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_delete_white_24.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_done_white_24.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_nightlight_white_48.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_48.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\outline_light_mode_white_48.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\outline_palette_white_48.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_white_48.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\outline_settings_white_48.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -352,84 +370,138 @@
     <ITunesArtwork Include="iTunesArtwork" />
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_delete_white_24.imageset\baseline_delete_white_24pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_delete_white_24.imageset\baseline_delete_white_24pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_add_white_24.imageset\baseline_add_white_24pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_add_white_24.imageset\baseline_add_white_24pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_add_white_24.imageset\baseline_add_white_24pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_add_white_24.imageset\baseline_add_white_24pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_add_white_24.imageset\baseline_add_white_24pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_add_white_24.imageset\baseline_add_white_24pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_delete_white_24.imageset\baseline_delete_white_24pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_delete_white_24.imageset\baseline_delete_white_24pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_delete_white_24.imageset\baseline_delete_white_24pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_delete_white_24.imageset\baseline_delete_white_24pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_done_white_24.imageset\baseline_done_white_24pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_done_white_24.imageset\baseline_done_white_24pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_done_white_24.imageset\baseline_done_white_24pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_done_white_24.imageset\baseline_done_white_24pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_done_white_24.imageset\baseline_done_white_24pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_done_white_24.imageset\baseline_done_white_24pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_nightlight_white_48.imageset\baseline_nightlight_white_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_nightlight_white_48.imageset\baseline_nightlight_white_48pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_nightlight_white_48.imageset\baseline_nightlight_white_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_nightlight_white_48.imageset\baseline_nightlight_white_48pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_nightlight_white_48.imageset\baseline_nightlight_white_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_nightlight_white_48.imageset\baseline_nightlight_white_48pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_48.imageset\outline_filter_vintage_white_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_48.imageset\outline_filter_vintage_white_48pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_48.imageset\outline_filter_vintage_white_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_48.imageset\outline_filter_vintage_white_48pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_48.imageset\outline_filter_vintage_white_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_48.imageset\outline_filter_vintage_white_48pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_light_mode_white_48.imageset\outline_light_mode_white_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_light_mode_white_48.imageset\outline_light_mode_white_48pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_light_mode_white_48.imageset\outline_light_mode_white_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_light_mode_white_48.imageset\outline_light_mode_white_48pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_light_mode_white_48.imageset\outline_light_mode_white_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_light_mode_white_48.imageset\outline_light_mode_white_48pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_palette_white_48.imageset\outline_palette_white_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_palette_white_48.imageset\outline_palette_white_48pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_palette_white_48.imageset\outline_palette_white_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_palette_white_48.imageset\outline_palette_white_48pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_palette_white_48.imageset\outline_palette_white_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_palette_white_48.imageset\outline_palette_white_48pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_white_48.imageset\outline_power_settings_new_white_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_white_48.imageset\outline_power_settings_new_white_48pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_white_48.imageset\outline_power_settings_new_white_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_white_48.imageset\outline_power_settings_new_white_48pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_white_48.imageset\outline_power_settings_new_white_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_white_48.imageset\outline_power_settings_new_white_48pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_settings_white_48.imageset\outline_settings_white_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_settings_white_48.imageset\outline_settings_white_48pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_settings_white_48.imageset\outline_settings_white_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_settings_white_48.imageset\outline_settings_white_48pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_settings_white_48.imageset\outline_settings_white_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_settings_white_48.imageset\outline_settings_white_48pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
 </Project>

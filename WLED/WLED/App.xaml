@@ -3,15 +3,78 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WLED.App">
     <Application.Resources>
-        <Color x:Key="DarkAccentColor">#333333</Color>
-        <Color x:Key="DarkBackgroundColor">#222222</Color>
-        <Color x:Key="DarkButtonPressed">#585858</Color>
-        <Color x:Key="DarkTextColor">#FFFFFF</Color>
-        
-        <Color x:Key="LightBackgroundColor">#FFFFFF</Color>
-        <Color x:Key="LightTextColor">#222222</Color>
+
+        <Color x:Key="TransparentColor">Transparent</Color>
+
+        <!-- Light colors -->
+        <Color x:Key="LightPageBackgroundColor">White</Color>
+        <Color x:Key="LightNavigationBarColor">WhiteSmoke</Color>
+        <Color x:Key="LightPrimaryColor">WhiteSmoke</Color>
+        <Color x:Key="LightSecondaryColor">Black</Color>
+        <Color x:Key="LightPrimaryTextColor">Black</Color>
+        <Color x:Key="LightSecondaryTextColor">White</Color>
+        <Color x:Key="LightTertiaryTextColor">Gray</Color>
+
+        <!-- Dark colors -->
+        <Color x:Key="DarkPageBackgroundColor">Black</Color>
+        <Color x:Key="DarkNavigationBarColor">Teal</Color>
+        <Color x:Key="DarkPrimaryColor">Teal</Color>
+        <Color x:Key="DarkSecondaryColor">White</Color>
+        <Color x:Key="DarkPrimaryTextColor">White</Color>
+        <Color x:Key="DarkSecondaryTextColor">White</Color>
+        <Color x:Key="DarkTertiaryTextColor">WhiteSmoke</Color>
+
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor"
+                    Value="{AppThemeBinding Light={StaticResource LightNavigationBarColor}, Dark={StaticResource DarkNavigationBarColor}}" />
+            <Setter Property="BarTextColor"
+                    Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
+        </Style>
+
+        <Style x:Key="NavigationBarGrid" TargetType="Grid">
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightNavigationBarColor}, Dark={StaticResource DarkNavigationBarColor}}" />
+            <Setter Property="Margin" Value="-15,0,0,0" />
+        </Style>
+
+        <Style x:Key="LargeLabelStyle"
+               TargetType="Label">
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource LightSecondaryTextColor}, Dark={StaticResource DarkSecondaryTextColor}}" />
+            <Setter Property="FontSize"
+                    Value="30" />
+        </Style>
+
+        <Style x:Key="MediumLabelStyle"
+               TargetType="Label">
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+            <Setter Property="FontSize"
+                    Value="25" />
+        </Style>
+
+        <Style x:Key="BoldMediumLabelStyle"
+               TargetType="Label">
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+            <Setter Property="FontSize"
+                    Value="25" />
+        </Style>
+
+        <Style x:Key="SmallLabelStyle"
+               TargetType="Label">
+            <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource LightTertiaryTextColor}, Dark={StaticResource DarkTertiaryTextColor}}" />
+            <Setter Property="FontSize"
+                    Value="18" />
+        </Style>
+
         <Style x:Key="PageStyle" TargetType="ContentPage">
-            <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource DarkBackgroundColor}, Light={StaticResource LightBackgroundColor}}" />
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightPageBackgroundColor}, Dark={StaticResource DarkPageBackgroundColor}}" />
+        </Style>
+
+        <Style TargetType="ListView">
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightPageBackgroundColor}, Dark={StaticResource DarkPageBackgroundColor}}" />
+            <Setter Property="SeparatorColor" Value="{AppThemeBinding Light={StaticResource LightTertiaryTextColor}, Dark={StaticResource DarkTertiaryTextColor}}" />
         </Style>
     </Application.Resources>
 </Application>
