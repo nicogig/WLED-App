@@ -4,10 +4,10 @@
              xmlns:wled="clr-namespace:WLED"
              xmlns:wledviews="clr-namespace:WLED.Views"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              x:Class="WLED.Views.DevicesListView"
              ios:Page.UseSafeArea="True"
-             NavigationPage.HasBackButton="False"
-             Style="{StaticResource PageStyle}">
+             NavigationPage.HasBackButton="False">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -15,6 +15,13 @@
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
                 <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkPrimaryTextColor}, Light={StaticResource LightPrimaryTextColor}}" />
+            </Style>
+            <Style x:Key="NavBarImageButton"  TargetType="ImageButton">
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="CornerRadius" Value="50" />
+                <Setter Property="Scale" Value="0.6" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -29,17 +36,17 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="65" />
             </Grid.ColumnDefinitions>
-            <Image x:Name="imageLeft" Source="{AppThemeBinding Dark=baseline_delete_white_24, Light=baseline_delete_black_24}" Scale="0.6"  Grid.Column="0">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnDeleteButtonTapped" />
-                </Image.GestureRecognizers>
-            </Image>
+            <ImageButton x:Name="imageLeft"
+                         Source="{AppThemeBinding Dark=baseline_delete_white_24, Light=baseline_delete_black_24}"
+                         Style="{StaticResource NavBarImageButton}"
+                         Clicked="OnDeleteButtonTapped"
+                         Grid.Column="0" />
             <Image Source="wled_logo_akemi.png" Scale="0.8" Grid.Column="1" />
-            <Image x:Name="imageRight" Source="baseline_add_white_24" Scale="0.6" Grid.Column="2">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnAddButtonTapped" />
-                </Image.GestureRecognizers>
-            </Image>
+            <ImageButton x:Name="imageRight"
+                         Source="{AppThemeBinding Dark=baseline_add_white_24, Light=baseline_add_black_24}"
+                         Style="{StaticResource NavBarImageButton}"
+                         Clicked="OnAddButtonTapped"
+                         Grid.Column="2" />
         </Grid>
     </NavigationPage.TitleView>
 

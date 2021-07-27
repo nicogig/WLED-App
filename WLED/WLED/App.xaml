@@ -68,7 +68,7 @@
                     Value="18" />
         </Style>
 
-        <Style x:Key="PageStyle" TargetType="ContentPage">
+        <Style TargetType="ContentPage">
             <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightPageBackgroundColor}, Dark={StaticResource DarkPageBackgroundColor}}" />
         </Style>
 

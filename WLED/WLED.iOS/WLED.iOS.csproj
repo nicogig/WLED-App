@@ -130,6 +130,7 @@
     <ImageAsset Include="Assets.xcassets\outline_settings_white_48.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_add_black_24.imageset\Contents.json" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -503,5 +504,14 @@
     <ImageAsset Include="Assets.xcassets\outline_settings_white_48.imageset\outline_settings_white_48pt_3x.png">
       <Visible>false</Visible>
     </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\baseline_add_black_24.imageset\baseline_add_black_24pt_1x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\baseline_add_black_24.imageset\baseline_add_black_24pt_2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\baseline_add_black_24.imageset\baseline_add_black_24pt_3x.png" />
   </ItemGroup>
 </Project>
