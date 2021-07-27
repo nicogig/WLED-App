@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WLED.Views.DeviceSettingsPage"
              Title="Settings"
-             IconImageSource="outline_settings_white_48.png">
+             IconImageSource="outline_settings_white_48"
+             Style="{StaticResource PageStyle}">
+    
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="LabelStyle" TargetType="Label">
@@ -12,6 +14,8 @@
                 <Setter Property="VerticalTextAlignment" Value="Center" />
                 <Setter Property="HorizontalTextAlignment" Value="Start" />
                 <Setter Property="FontSize" Value="20" />
+                <Setter Property="TextColor"
+                    Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
             </Style>
 
         </ResourceDictionary>
@@ -23,7 +27,7 @@
                 <RowDefinition Height="10*" />
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0" BackgroundColor="#333" RowSpacing="0">
+            <Grid Grid.Row="0" BackgroundColor="{AppThemeBinding Light={StaticResource LightNavigationBarColor}, Dark={StaticResource DarkNavigationBarColor}}" RowSpacing="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
@@ -55,7 +59,20 @@
             </Grid>
             <ListView Grid.Row="1"
                       x:Name="listView"
-                      ItemTapped="listView_ItemTapped"></ListView>
+                      ItemTapped="listView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HeightRequest="{Binding ListHeight}">
+                                <Label Text="{Binding .}" 
+                                       VerticalOptions="CenterAndExpand"
+                                       Margin="10"
+                                       Style="{StaticResource SmallLabelStyle}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

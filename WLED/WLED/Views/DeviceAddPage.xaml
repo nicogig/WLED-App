@@ -6,28 +6,28 @@
              Title="Add a Device"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
              ios:Page.UseSafeArea="true"
-             >
+             Style="{StaticResource PageStyle}">
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style x:Key="LabelStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="White" />
-                <Setter Property="Font" Value="18" />
-                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-            </Style>
             <Style x:Key="EntryStyle" TargetType="Entry">
-                <Setter Property="TextColor" Value="White" />
-                <Setter Property="PlaceholderColor" Value="#888" />
-                <Setter Property="BackgroundColor" Value="#333" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+                <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource LightTertiaryTextColor}, Dark={StaticResource DarkTertiaryTextColor}}" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightPageBackgroundColor}, Dark={StaticResource DarkPageBackgroundColor}}" />
                 <Setter Property="Margin" Value="10" />
                 <Setter Property="ReturnType" Value="Done" />
                 <Setter Property="HorizontalOptions" Value="Fill" />
+            </Style>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" />
+                <Setter Property="Margin" Value="10" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <NavigationPage.TitleView>
-        <Grid BackgroundColor="#333">
+        <Grid Style="{StaticResource NavigationBarGrid}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="45" />
             </Grid.RowDefinitions>
@@ -36,31 +36,42 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="65" />
             </Grid.ColumnDefinitions>
-
-            <Image x:Name="imageRight" Source="baseline_done_white_24.png"  Scale="0.6" Grid.Column="2">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnEntryCompleted" />
-                </Image.GestureRecognizers>
-            </Image>
+            <ImageButton x:Name="imageRight"
+                         Source="{AppThemeBinding Dark=baseline_done_white_24, Light=baseline_done_black_24}"
+                         Style="{StaticResource NavBarImageButton}"
+                         Clicked="OnEntryCompleted"
+                         Grid.Column="2" />
         </Grid>
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
         <StackLayout>
-            
-            <Button Text="Discover lights..." BackgroundColor="#333" TextColor="White" Margin="10" Clicked="OnDiscoveryButtonClicked"/>
-            <Label x:Name="discoveryResultLabel" Text="" Style="{StaticResource LabelStyle}" IsVisible="False" />
+            <Label Text="Find lights in your network:" 
+                   Style="{StaticResource MediumLabelStyle}"
+                   Margin="10" />
+
+            <Button Text="Discover lights..." Style="{StaticResource ButtonStyle}" Clicked="OnDiscoveryButtonClicked"/>
+            <Label x:Name="discoveryResultLabel" Text="" 
+                   Style="{StaticResource SmallLabelStyle}" 
+                   Margin="10"
+                   IsVisible="False" />
             <BoxView HeightRequest="1" HorizontalOptions="Fill" Margin="8,0" BackgroundColor="#888"/>
             
-            <Label Text="Add a light manually:" Style="{StaticResource LabelStyle}" />
-            <Label Text="IP address or URL" Style="{StaticResource LabelStyle}" />
+            <Label Text="Add a light manually:" 
+                   Style="{StaticResource MediumLabelStyle}"
+                   Margin="10" />
+            <Label Text="IP address or URL" 
+                   Style="{StaticResource SmallLabelStyle}"
+                   Margin="10" />
             <Entry x:Name="networkAddressEntry"
                    Keyboard="Url"
                    Placeholder="192.168.4.1"
                    Completed="OnEntryCompleted"
                    Style="{StaticResource EntryStyle}" />
 
-            <Label Text="Custom Name" Style="{StaticResource LabelStyle}" />
+            <Label Text="Custom Name" 
+                   Style="{StaticResource SmallLabelStyle}" 
+                   Margin="10" />
             <Entry x:Name="nameEntry"
                    Keyboard="Plain"
                    Placeholder="(get from device)"

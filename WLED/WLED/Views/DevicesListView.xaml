@@ -7,7 +7,8 @@
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              x:Class="WLED.Views.DevicesListView"
              ios:Page.UseSafeArea="True"
-             NavigationPage.HasBackButton="False">
+             NavigationPage.HasBackButton="False"
+             Style="{StaticResource PageStyle}">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -16,13 +17,7 @@
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
                 <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource DarkPrimaryTextColor}, Light={StaticResource LightPrimaryTextColor}}" />
             </Style>
-            <Style x:Key="NavBarImageButton"  TargetType="ImageButton">
-                <Setter Property="VerticalOptions" Value="FillAndExpand" />
-                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
-                <Setter Property="CornerRadius" Value="50" />
-                <Setter Property="Scale" Value="0.6" />
-                <Setter Property="BackgroundColor" Value="Transparent" />
-            </Style>
+            
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -96,11 +91,14 @@
                                 <Label Text="{Binding Status}" 
                                        Style="{StaticResource SmallLabelStyle}"
                                        Grid.Row="1" Grid.Column="0" />
-                                <!-- TODO: Redo button -->
+                                
                                 <Button Clicked="OnPowerButtonTapped" 
-                                        BorderRadius="32" BackgroundColor="{AppThemeBinding Light={StaticResource LightPageBackgroundColor}, Dark={StaticResource DarkPageBackgroundColor}}" BorderColor="White" BorderWidth="4"
+                                        BorderRadius="32" 
+                                        BackgroundColor="{AppThemeBinding Light={StaticResource LightPageBackgroundColor}, Dark={StaticResource DarkPageBackgroundColor}}" 
+                                        BorderColor="{Binding ColorCurrent}" BorderWidth="4"
                                         Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" />
-                                <Image Source="icon_power.png" Scale ="0.8" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" InputTransparent="True" BackgroundColor="Transparent"/>
+                                <Image Source="{AppThemeBinding Light=outline_power_settings_new_black_48, Dark=outline_power_settings_new_white_48}" 
+                                       Scale ="0.8" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" InputTransparent="True" BackgroundColor="Transparent"/>
 
                                 <Slider Maximum="255.1" Minimum="0.9" Value="{Binding BrightnessCurrent, Mode=TwoWay}"
                                         MinimumTrackColor="{Binding ColorCurrent}" MaximumTrackColor="#333" 

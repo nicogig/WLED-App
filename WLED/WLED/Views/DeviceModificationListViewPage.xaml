@@ -6,13 +6,14 @@
              Title="Delete or Hide Devices"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true"
-             >
+             Style="{StaticResource PageStyle}" >
 
-    <StackLayout>
+    <StackLayout BackgroundColor="{AppThemeBinding Light={StaticResource LightPageBackgroundColor}, Dark={StaticResource DarkPageBackgroundColor}}">
         
         <Label Text="Click on devices to hide them!" 
                HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-               TextColor="White" Font="18"/>
+               Margin="10"
+               Style="{StaticResource SmallLabelStyle}"/>
 
         <ListView x:Name="DeviceModificationListView"
                 ItemsSource="{Binding DeviceList}"
@@ -26,7 +27,8 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid BackgroundColor="#222222" Margin="6,2" Padding ="6">
+                        <Grid BackgroundColor="{AppThemeBinding Light={StaticResource LightPageBackgroundColor}, Dark={StaticResource DarkPageBackgroundColor}}"
+                              Margin="6,2" Padding ="6">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="35" />
                                 <RowDefinition Height="25" />
@@ -36,17 +38,20 @@
                                 <ColumnDefinition Width="65" />
                             </Grid.ColumnDefinitions>
                             <Label Text="{Binding Name}" 
-                                   Font="Bold, 25" TextColor="{Binding TextColor}"
+                                   Style="{StaticResource BoldMediumLabelStyle}"
                                    Grid.Row="0" Grid.Column="0" />
                             <Label Text="{Binding Status}" 
-                                   Font="18" TextColor="{Binding TextColor}"
+                                   Style="{StaticResource SmallLabelStyle}"
                                    Grid.Row="1" Grid.Column="0" />
-                            <Button Clicked="OnDeleteButtonTapped" BackgroundColor="#D9321F"
-                                    BorderRadius="34" BorderColor="White" BorderWidth="4"
-                                    Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" />
                             
+                            <Button Clicked="OnDeleteButtonTapped" BackgroundColor="Transparent"
+                                    BorderRadius="34" BorderColor="#D9321F" BorderWidth="4"
+                                    Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" />
 
-                            <Image Source="icon_delete.png" Scale ="0.8" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" InputTransparent="True" BackgroundColor="Transparent"/>
+
+                            <Image Source="{AppThemeBinding Dark=baseline_delete_white_24, Light=baseline_delete_black_24}" 
+                                   Scale ="0.8" 
+                                   Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" InputTransparent="True" BackgroundColor="Transparent"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

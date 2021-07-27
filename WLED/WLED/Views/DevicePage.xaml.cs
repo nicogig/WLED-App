@@ -35,6 +35,7 @@ namespace WLED.Views
 
         private void InitPage (WLEDDevice device)
         {
+            OSAppTheme currentTheme = Application.Current.RequestedTheme;
             colourWheel.SelectedColor = wledDevice.ColorCurrent;
             brightnessSlider.Value = wledDevice.BrightnessCurrent;
             brightnessSlider.MinimumTrackColor = wledDevice.ColorCurrent;
@@ -43,8 +44,16 @@ namespace WLED.Views
             if (wledDevice.StateCurrent)
             {
                 // Device is on; tint navbar maybe?
-                bgLeft.BackgroundColor = Color.FromHex("#585858");
-                labelLeft.BackgroundColor = Color.FromHex("#585858");
+                if (currentTheme == OSAppTheme.Dark)
+                {
+                    bgLeft.BackgroundColor = (Color)Application.Current.Resources["DarkButtonPressed"];
+                    labelLeft.BackgroundColor = (Color)Application.Current.Resources["DarkButtonPressed"];
+                }
+                else
+                {
+                    bgLeft.BackgroundColor = (Color)Application.Current.Resources["LightButtonPressed"];
+                    labelLeft.BackgroundColor = (Color)Application.Current.Resources["LightButtonPressed"];
+                }
                 labelLeft.Text = "Off";
                 nightLight.IsEnabled = true;
                 brightnessSlider.IsEnabled = true;
@@ -52,24 +61,51 @@ namespace WLED.Views
                 colourWheel.IsEnabled = true;
                 if (wledDevice.LastJSONStateModel.nl.on)
                 {
-                    // NightLight is On
-                    nightLight.BackgroundColor = Color.FromHex("#585858");
-                    labelCenter.BackgroundColor = Color.FromHex("#585858");
+                    if (currentTheme == OSAppTheme.Dark)
+                    {
+                        nightLight.BackgroundColor = (Color)Application.Current.Resources["DarkButtonPressed"];
+                        labelCenter.BackgroundColor = (Color)Application.Current.Resources["DarkButtonPressed"];
+                    }
+                    else
+                    {
+                        nightLight.BackgroundColor = (Color)Application.Current.Resources["LightButtonPressed"];
+                        labelCenter.BackgroundColor = (Color)Application.Current.Resources["LightButtonPressed"];
+
+                    }
                 }
                 else
                 {
-                    nightLight.BackgroundColor = Color.FromHex("#333");
-                    labelCenter.BackgroundColor = Color.FromHex("#333");
+                    if (currentTheme == OSAppTheme.Dark)
+                    {
+                        nightLight.BackgroundColor = (Color)Application.Current.Resources["DarkNavigationBarColor"];
+                        labelCenter.BackgroundColor = (Color)Application.Current.Resources["DarkNavigationBarColor"];
+                    }
+                    else
+                    {
+                        nightLight.BackgroundColor = (Color)Application.Current.Resources["LightNavigationBarColor"];
+                        labelCenter.BackgroundColor = (Color)Application.Current.Resources["LightNavigationBarColor"];
+
+                    }
                 }
             }
             else
             {
                 // Device is not on
-                bgLeft.BackgroundColor = Color.FromHex("#333");
-                labelLeft.BackgroundColor = Color.FromHex("#333");
+                if (currentTheme == OSAppTheme.Dark)
+                {
+                    bgLeft.BackgroundColor = (Color)Application.Current.Resources["DarkNavigationBarColor"];
+                    labelLeft.BackgroundColor = (Color)Application.Current.Resources["DarkNavigationBarColor"];
+                    nightLight.BackgroundColor = (Color)Application.Current.Resources["DarkNavigationBarColor"];
+                    labelCenter.BackgroundColor = (Color)Application.Current.Resources["DarkNavigationBarColor"];
+                }
+                else
+                {
+                    bgLeft.BackgroundColor = (Color)Application.Current.Resources["LightNavigationBarColor"];
+                    labelLeft.BackgroundColor = (Color)Application.Current.Resources["LightNavigationBarColor"];
+                    nightLight.BackgroundColor = (Color)Application.Current.Resources["LightNavigationBarColor"];
+                    labelCenter.BackgroundColor = (Color)Application.Current.Resources["LightNavigationBarColor"];
+                }
                 labelLeft.Text = "On";
-                nightLight.BackgroundColor = Color.FromHex("#333");
-                labelCenter.BackgroundColor = Color.FromHex("#333");
                 // Disable all controls, as device isn't on
                 nightLight.IsEnabled = false;
                 brightnessSlider.IsEnabled = false;

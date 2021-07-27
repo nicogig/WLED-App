@@ -8,22 +8,25 @@
              xmlns:colorpicker="clr-namespace:ColorPicker;assembly=ColorPicker"
              ios:Page.UseSafeArea="true"
              Title="Colors"
-             IconImageSource="outline_palette_white_48.png">
+             IconImageSource="outline_palette_white_48"
+             Style="{StaticResource PageStyle}">
+    
+    
+    
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="backgroundColor">#333</Color>
             <Style x:Key="MenuBarTextStyle" TargetType="Label">
                 <Setter Property="Grid.Row" Value="1" />
                 <Setter Property="VerticalOptions" Value="FillAndExpand" />
                 <Setter Property="VerticalTextAlignment" Value="Start" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
-                <Setter Property="BackgroundColor" Value="#333" />
-                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightNavigationBarColor}, Dark={StaticResource DarkNavigationBarColor}}" />
+                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}" />
             </Style>
             <Style x:Key="MenuBarImageButtonStyle" TargetType="ImageButton">
                 <Setter Property="Grid.Row" Value="0" />
-                <Setter Property="BackgroundColor" Value="#333" />
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightNavigationBarColor}, Dark={StaticResource DarkNavigationBarColor}}" />
                 <Setter Property="VerticalOptions" Value="FillAndExpand" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
                 <Setter Property="CornerRadius" Value="0" />
@@ -59,7 +62,7 @@
 
 
 
-                <ImageButton     Source="baseline_nightlight_white_48.png"
+                <ImageButton     Source="{AppThemeBinding Dark=baseline_nightlight_white_48, Light=baseline_nightlight_black_48}"
                                  Grid.Column="1"
                                  x:Name="nightLight"
                                  Clicked="nightLight_Clicked"
@@ -71,7 +74,7 @@
 
 
 
-                <ImageButton     Source="outline_power_settings_new_white_48.png"
+                <ImageButton     Source="{AppThemeBinding Dark=outline_power_settings_new_white_48, Light=outline_power_settings_new_black_48}"
                                  Grid.Column="0"
                                  Style="{StaticResource MenuBarImageButtonStyle}"
                                  Clicked="TogglePower"
@@ -83,7 +86,11 @@
 
             </Grid>
 
-            <colorpicker:ColorWheel x:Name="colourWheel" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
+            <colorpicker:ColorWheel x:Name="colourWheel" 
+                                    Grid.Row="1" 
+                                    Grid.Column="0" 
+                                    Grid.ColumnSpan="3"
+                                    Margin="15" />
 
 
 
@@ -97,9 +104,13 @@
                     <ColumnDefinition Width="100*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Image Source="outline_light_mode_white_48.png" Grid.Column="1" Scale="0.8"/>
-                <Slider x:Name="brightnessSlider" Maximum="255.1" Minimum="0.9"
-                        MaximumTrackColor="#333" ThumbColor="White" ios:Slider.UpdateOnTap="true"
+                <Image Source="{AppThemeBinding Dark=outline_light_mode_white_48, Light=outline_light_mode_black_48}" Grid.Column="1" Scale="0.8"/>
+                <Slider x:Name="brightnessSlider" 
+                        Maximum="255.1" 
+                        Minimum="0.9"
+                        MaximumTrackColor="#333" 
+                        ThumbColor="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}" 
+                        ios:Slider.UpdateOnTap="true"
                         Grid.Column="2"
                         DragCompleted="brightnessSlider_DragCompleted"/>
             </Grid>
@@ -117,10 +128,11 @@
                     <ColumnDefinition Width="100*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Image Source="outline_palette_white_48.png" Grid.Column="1" Scale="0.8"/>
+                <Image Source="{AppThemeBinding Dark=outline_palette_white_48, Light=outline_palette_black_48}" Grid.Column="1" Scale="0.8"/>
                 <Picker x:Name="palettesPicker"
                         Grid.Column="2"
-                        SelectedIndexChanged="palettesPicker_SelectedIndexChanged" />
+                        SelectedIndexChanged="palettesPicker_SelectedIndexChanged"
+                        TextColor="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"/>
             </Grid>
             
             

@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WLED.Views.DeviceErrorPage">
+             x:Class="WLED.Views.DeviceErrorPage"
+             Style="{StaticResource PageStyle}">
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -17,10 +18,15 @@
             </Grid.ColumnDefinitions>
 
             <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Vertical" Spacing="0">
-                <Image Source="outline_error_reach.png" Scale="0.5" />
-                <Label Font="Bold, 25" Text="Cannot connect to light." VerticalTextAlignment="Start" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                <Image Source="sad_cat_akemi" Scale="0.5" />
+                <Label Text="Cannot connect to light."
+                       VerticalTextAlignment="Start" 
+                       HorizontalTextAlignment="Center"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       Style="{StaticResource BoldMediumLabelStyle}"/>
                 <Label x:Name="instructionLabel"
-               Font="18"
+                       Style="{StaticResource SmallLabelStyle}"
                Text="Please check it is plugged in, and try again."
                HorizontalTextAlignment="Center"
                HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />

@@ -1,0 +1,27 @@
+{
+  "images": [
+    {
+      "appearances": [],
+      "scale": "1x",
+      "idiom": "iphone",
+      "filename": "sad_cat_akemi@1.png"
+    },
+    {
+      "appearances": [],
+      "scale": "2x",
+      "idiom": "iphone",
+      "filename": "sad_cat_akemi@2.png"
+    },
+    {
+      "appearances": [],
+      "scale": "3x",
+      "idiom": "iphone",
+      "filename": "sad_cat_akemi@3.png"
+    }
+  ],
+  "properties": {},
+  "info": {
+    "version": 1,
+    "author": ""
+  }
+}

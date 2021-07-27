@@ -5,7 +5,8 @@
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              x:Class="WLED.Views.DeviceEffectsPage"
              Title="Effects"
-             IconImageSource="outline_filter_vintage_white_48.png">
+             IconImageSource="outline_filter_vintage_white_48"
+             Style="{StaticResource PageStyle}">
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -27,7 +28,10 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout HeightRequest="{Binding ListHeight}">
-                                <Label Text="{Binding .}"  VerticalOptions="CenterAndExpand"/>
+                                <Label Text="{Binding .}" 
+                                       VerticalOptions="CenterAndExpand"
+                                       Margin="10"
+                                       Style="{StaticResource SmallLabelStyle}"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
