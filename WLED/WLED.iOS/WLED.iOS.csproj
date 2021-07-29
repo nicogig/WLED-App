@@ -213,28 +213,72 @@
     <ImageAsset Include="Assets.xcassets\wled_logo_akemi.imageset\wled_logo_akemi.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\baseline_add_black_24.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\baseline_add_white_24.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\baseline_delete_black_24.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\baseline_delete_white_24.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\baseline_done_black_24.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\baseline_done_white_24.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\baseline_nightlight_black_48.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\baseline_nightlight_white_48.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_24.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_48.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\outline_light_mode_black_48.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\outline_light_mode_white_48.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\outline_palette_black_48.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\outline_palette_white_24.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\outline_palette_white_48.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_black_48.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_white_48.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\outline_settings_white_24.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\outline_settings_white_48.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\sad_cat_akami.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\wled_logo_akemi.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_add_black_24.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_add_white_24.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_delete_black_24.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_delete_white_24.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_done_black_24.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_done_white_24.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_nightlight_black_48.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_nightlight_white_48.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_24.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_48.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\outline_light_mode_black_48.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\outline_light_mode_white_48.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\outline_palette_black_48.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\outline_palette_white_24.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\outline_palette_white_48.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_black_48.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_white_48.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\outline_settings_white_24.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\outline_settings_white_48.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\sad_cat_akami.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\wled_logo_akemi.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -565,342 +609,568 @@
     <ITunesArtwork Include="iTunesArtwork" />
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-1024.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-120-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-120-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-120.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-152.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-152.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-167.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-167.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-180.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-20.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-20.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40-2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-58-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-58-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-60.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-80-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-80-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-80.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-87.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-100.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-100.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-1024.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-114.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-114.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-120.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-128.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-128.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-144.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-144.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-152.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-152.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-16.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-16.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-167.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-167.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-172.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-172.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-180.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-196.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-196.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-20.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-20.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-256.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-256.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-32.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-32.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-48.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-48.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-50.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-512.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-512.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-55.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-55.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-57.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-57.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-60.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-64.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-64.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-72.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-72.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-76.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-80.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-87.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-88.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-88.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_add_black_24.imageset\baseline_add_black_24pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_add_black_24.imageset\baseline_add_black_24pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_add_black_24.imageset\baseline_add_black_24pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_add_black_24.imageset\baseline_add_black_24pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_add_black_24.imageset\baseline_add_black_24pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_add_black_24.imageset\baseline_add_black_24pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_add_white_24.imageset\baseline_add_white_24pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_add_white_24.imageset\baseline_add_white_24pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_add_white_24.imageset\baseline_add_white_24pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_add_white_24.imageset\baseline_add_white_24pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_add_white_24.imageset\baseline_add_white_24pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_add_white_24.imageset\baseline_add_white_24pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_delete_black_24.imageset\baseline_delete_black_24pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_delete_black_24.imageset\baseline_delete_black_24pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_delete_black_24.imageset\baseline_delete_black_24pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_delete_black_24.imageset\baseline_delete_black_24pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_delete_black_24.imageset\baseline_delete_black_24pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_delete_black_24.imageset\baseline_delete_black_24pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_delete_white_24.imageset\baseline_delete_white_24pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_delete_white_24.imageset\baseline_delete_white_24pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_delete_white_24.imageset\baseline_delete_white_24pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_delete_white_24.imageset\baseline_delete_white_24pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_delete_white_24.imageset\baseline_delete_white_24pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_delete_white_24.imageset\baseline_delete_white_24pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_done_black_24.imageset\baseline_done_black_24pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_done_black_24.imageset\baseline_done_black_24pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_done_black_24.imageset\baseline_done_black_24pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_done_black_24.imageset\baseline_done_black_24pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_done_black_24.imageset\baseline_done_black_24pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_done_black_24.imageset\baseline_done_black_24pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_done_white_24.imageset\baseline_done_white_24pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_done_white_24.imageset\baseline_done_white_24pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_done_white_24.imageset\baseline_done_white_24pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_done_white_24.imageset\baseline_done_white_24pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_done_white_24.imageset\baseline_done_white_24pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_done_white_24.imageset\baseline_done_white_24pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_nightlight_black_48.imageset\baseline_nightlight_black_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_nightlight_black_48.imageset\baseline_nightlight_black_48pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_nightlight_black_48.imageset\baseline_nightlight_black_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_nightlight_black_48.imageset\baseline_nightlight_black_48pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_nightlight_black_48.imageset\baseline_nightlight_black_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_nightlight_black_48.imageset\baseline_nightlight_black_48pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_nightlight_white_48.imageset\baseline_nightlight_white_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_nightlight_white_48.imageset\baseline_nightlight_white_48pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_nightlight_white_48.imageset\baseline_nightlight_white_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_nightlight_white_48.imageset\baseline_nightlight_white_48pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\baseline_nightlight_white_48.imageset\baseline_nightlight_white_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_nightlight_white_48.imageset\baseline_nightlight_white_48pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_48.imageset\outline_filter_vintage_white_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_48.imageset\outline_filter_vintage_white_48pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_48.imageset\outline_filter_vintage_white_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_48.imageset\outline_filter_vintage_white_48pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_48.imageset\outline_filter_vintage_white_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_48.imageset\outline_filter_vintage_white_48pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_light_mode_black_48.imageset\outline_light_mode_black_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_light_mode_black_48.imageset\outline_light_mode_black_48pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_light_mode_black_48.imageset\outline_light_mode_black_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_light_mode_black_48.imageset\outline_light_mode_black_48pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_light_mode_black_48.imageset\outline_light_mode_black_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_light_mode_black_48.imageset\outline_light_mode_black_48pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_light_mode_white_48.imageset\outline_light_mode_white_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_light_mode_white_48.imageset\outline_light_mode_white_48pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_light_mode_white_48.imageset\outline_light_mode_white_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_light_mode_white_48.imageset\outline_light_mode_white_48pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_light_mode_white_48.imageset\outline_light_mode_white_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_light_mode_white_48.imageset\outline_light_mode_white_48pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_palette_black_48.imageset\outline_palette_black_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_palette_black_48.imageset\outline_palette_black_48pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_palette_black_48.imageset\outline_palette_black_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_palette_black_48.imageset\outline_palette_black_48pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_palette_black_48.imageset\outline_palette_black_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_palette_black_48.imageset\outline_palette_black_48pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_palette_white_48.imageset\outline_palette_white_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_palette_white_48.imageset\outline_palette_white_48pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_palette_white_48.imageset\outline_palette_white_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_palette_white_48.imageset\outline_palette_white_48pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_palette_white_48.imageset\outline_palette_white_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_palette_white_48.imageset\outline_palette_white_48pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_black_48.imageset\outline_power_settings_new_black_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_black_48.imageset\outline_power_settings_new_black_48pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_black_48.imageset\outline_power_settings_new_black_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_black_48.imageset\outline_power_settings_new_black_48pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_black_48.imageset\outline_power_settings_new_black_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_black_48.imageset\outline_power_settings_new_black_48pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_white_48.imageset\outline_power_settings_new_white_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_white_48.imageset\outline_power_settings_new_white_48pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_white_48.imageset\outline_power_settings_new_white_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_white_48.imageset\outline_power_settings_new_white_48pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_white_48.imageset\outline_power_settings_new_white_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_white_48.imageset\outline_power_settings_new_white_48pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_settings_white_48.imageset\outline_settings_white_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_settings_white_48.imageset\outline_settings_white_48pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_settings_white_48.imageset\outline_settings_white_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_settings_white_48.imageset\outline_settings_white_48pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\outline_settings_white_48.imageset\outline_settings_white_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_settings_white_48.imageset\outline_settings_white_48pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\sad_cat_akami.imageset\sad_cat_akemi%401.png" />
+    <ImageAsset Include="Assets.xcassets\sad_cat_akami.imageset\sad_cat_akemi%401.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\sad_cat_akami.imageset\sad_cat_akemi%402.png" />
+    <ImageAsset Include="Assets.xcassets\sad_cat_akami.imageset\sad_cat_akemi%402.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\sad_cat_akami.imageset\sad_cat_akemi%403.png" />
+    <ImageAsset Include="Assets.xcassets\sad_cat_akami.imageset\sad_cat_akemi%403.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\wled_logo_akemi.imageset\wled_logo_akemi.png" />
+    <ImageAsset Include="Assets.xcassets\wled_logo_akemi.imageset\wled_logo_akemi.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
 </Project>
