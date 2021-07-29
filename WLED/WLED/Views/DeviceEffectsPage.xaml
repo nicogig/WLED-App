@@ -5,7 +5,7 @@
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              x:Class="WLED.Views.DeviceEffectsPage"
              Title="Effects"
-             IconImageSource="outline_filter_vintage_white_48"
+             IconImageSource="outline_filter_vintage_white_24"
              Style="{StaticResource PageStyle}">
     <ContentPage.Content>
         <Grid>

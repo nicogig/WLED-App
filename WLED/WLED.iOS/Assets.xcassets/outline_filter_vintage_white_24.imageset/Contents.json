@@ -27,13 +27,13 @@
       "appearances": [],
       "scale": "1x",
       "idiom": "iphone",
-      "filename": "outline_power_settings_new_black_48pt_1x.png"
+      "filename": "outline_filter_vintage_white_24pt_1x.png"
     },
     {
       "appearances": [],
       "scale": "2x",
       "idiom": "iphone",
-      "filename": "outline_power_settings_new_black_48pt_2x.png"
+      "filename": "outline_filter_vintage_white_24pt_2x.png"
     },
     {
       "appearances": [],
@@ -45,7 +45,7 @@
       "appearances": [],
       "scale": "3x",
       "idiom": "iphone",
-      "filename": "outline_power_settings_new_black_48pt_3x.png"
+      "filename": "outline_filter_vintage_white_24pt_3x.png"
     },
     {
       "appearances": [],
@@ -127,7 +127,8 @@
         }
       ],
       "scale": "1x",
-      "idiom": "iphone"
+      "idiom": "iphone",
+      "filename": "outline_filter_vintage_white_24pt_1x.png"
     },
     {
       "appearances": [
@@ -137,7 +138,8 @@
         }
       ],
       "scale": "2x",
-      "idiom": "iphone"
+      "idiom": "iphone",
+      "filename": "outline_filter_vintage_white_24pt_2x.png"
     },
     {
       "appearances": [
@@ -158,7 +160,8 @@
         }
       ],
       "scale": "3x",
-      "idiom": "iphone"
+      "idiom": "iphone",
+      "filename": "outline_filter_vintage_white_24pt_3x.png"
     },
     {
       "appearances": [
@@ -266,7 +269,7 @@
       ],
       "scale": "1x",
       "idiom": "iphone",
-      "filename": "outline_power_settings_new_black_48pt_1x.png"
+      "filename": "outline_filter_vintage_white_24pt_1x.png"
     },
     {
       "appearances": [
@@ -277,7 +280,7 @@
       ],
       "scale": "2x",
       "idiom": "iphone",
-      "filename": "outline_power_settings_new_black_48pt_2x.png"
+      "filename": "outline_filter_vintage_white_24pt_2x.png"
     },
     {
       "appearances": [
@@ -299,7 +302,7 @@
       ],
       "scale": "3x",
       "idiom": "iphone",
-      "filename": "outline_power_settings_new_black_48pt_3x.png"
+      "filename": "outline_filter_vintage_white_24pt_3x.png"
     },
     {
       "appearances": [

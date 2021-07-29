@@ -1,0 +1,105 @@
+{
+  "images": [
+    {
+      "appearances": [],
+      "scale": "1x",
+      "idiom": "iphone"
+    },
+    {
+      "appearances": [],
+      "scale": "2x",
+      "idiom": "iphone"
+    },
+    {
+      "appearances": [],
+      "scale": "3x",
+      "idiom": "iphone",
+      "filename": "circle_logo.png"
+    },
+    {
+      "appearances": [
+        {
+          "appearance": "luminosity",
+          "value": "dark"
+        }
+      ],
+      "idiom": "iphone"
+    },
+    {
+      "appearances": [
+        {
+          "appearance": "luminosity",
+          "value": "light"
+        }
+      ],
+      "idiom": "iphone"
+    },
+    {
+      "appearances": [
+        {
+          "appearance": "luminosity",
+          "value": "dark"
+        }
+      ],
+      "scale": "1x",
+      "idiom": "iphone"
+    },
+    {
+      "appearances": [
+        {
+          "appearance": "luminosity",
+          "value": "light"
+        }
+      ],
+      "scale": "1x",
+      "idiom": "iphone"
+    },
+    {
+      "appearances": [
+        {
+          "appearance": "luminosity",
+          "value": "dark"
+        }
+      ],
+      "scale": "2x",
+      "idiom": "iphone"
+    },
+    {
+      "appearances": [
+        {
+          "appearance": "luminosity",
+          "value": "light"
+        }
+      ],
+      "scale": "2x",
+      "idiom": "iphone"
+    },
+    {
+      "appearances": [
+        {
+          "appearance": "luminosity",
+          "value": "dark"
+        }
+      ],
+      "scale": "3x",
+      "idiom": "iphone",
+      "filename": "circle_logo1.png"
+    },
+    {
+      "appearances": [
+        {
+          "appearance": "luminosity",
+          "value": "light"
+        }
+      ],
+      "scale": "3x",
+      "idiom": "iphone",
+      "filename": "circle_logo2.png"
+    }
+  ],
+  "properties": {},
+  "info": {
+    "version": 1,
+    "author": ""
+  }
+}
