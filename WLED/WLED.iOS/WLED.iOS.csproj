@@ -54,11 +54,11 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>Apple Development: nicola.gigante@outlook.com (7GDEZMV9KA)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>VS: WildCard Development</CodesignProvision>
-    <MtouchLink>None</MtouchLink>
+    <CodesignProvision>iOS Team Provisioning Profile: com.aircookie.WLED</CodesignProvision>
+    <MtouchLink>SdkOnly</MtouchLink>
     <MtouchFastDev>true</MtouchFastDev>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
@@ -72,6 +72,7 @@
     <CodesignKey>iPhone Developer: Christian Schwinne (K7LH967W38)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
+    <MtouchLink>SdkOnly</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
@@ -85,6 +86,7 @@
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
     <CodesignKey>iPhone Developer: Christian Schwinne (K7LH967W38)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
     <DebugType>none</DebugType>
@@ -98,6 +100,7 @@
     <CodesignKey>iPhone Distribution: Christian Schwinne (A64W9L8Q44)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchUseLlvm>true</MtouchUseLlvm>
+    <MtouchLink>SdkOnly</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <AppExtensionDebugBundleId />
@@ -124,9 +127,6 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\baseline_nightlight_white_48.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Images.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\sad_cat_akami.imageset\Contents.json">
@@ -177,6 +177,51 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <ImageAsset Include="Assets.xcassets\baseline_add_black_24.imageset\baseline_add_black_24pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_add_black_24.imageset\baseline_add_black_24pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_add_black_24.imageset\baseline_add_black_24pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_delete_black_24.imageset\baseline_delete_black_24pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_delete_black_24.imageset\baseline_delete_black_24pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_delete_black_24.imageset\baseline_delete_black_24pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_delete_white_24.imageset\baseline_delete_white_24pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_delete_white_24.imageset\baseline_delete_white_24pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_delete_white_24.imageset\baseline_delete_white_24pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_done_black_24.imageset\baseline_done_black_24pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_done_black_24.imageset\baseline_done_black_24pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_done_black_24.imageset\baseline_done_black_24pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_done_white_24.imageset\baseline_done_white_24pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_done_white_24.imageset\baseline_done_white_24pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_done_white_24.imageset\baseline_done_white_24pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_nightlight_black_48.imageset\baseline_nightlight_black_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_nightlight_black_48.imageset\baseline_nightlight_black_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_nightlight_black_48.imageset\baseline_nightlight_black_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_nightlight_white_48.imageset\baseline_nightlight_white_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_nightlight_white_48.imageset\baseline_nightlight_white_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_nightlight_white_48.imageset\baseline_nightlight_white_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_48.imageset\outline_filter_vintage_white_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_48.imageset\outline_filter_vintage_white_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_48.imageset\outline_filter_vintage_white_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_light_mode_black_48.imageset\outline_light_mode_black_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_light_mode_black_48.imageset\outline_light_mode_black_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_light_mode_black_48.imageset\outline_light_mode_black_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_light_mode_white_48.imageset\outline_light_mode_white_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_light_mode_white_48.imageset\outline_light_mode_white_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_light_mode_white_48.imageset\outline_light_mode_white_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_palette_black_48.imageset\outline_palette_black_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_palette_black_48.imageset\outline_palette_black_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_palette_black_48.imageset\outline_palette_black_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_palette_white_48.imageset\outline_palette_white_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_palette_white_48.imageset\outline_palette_white_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_palette_white_48.imageset\outline_palette_white_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_black_48.imageset\outline_power_settings_new_black_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_black_48.imageset\outline_power_settings_new_black_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_black_48.imageset\outline_power_settings_new_black_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_white_48.imageset\outline_power_settings_new_white_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_white_48.imageset\outline_power_settings_new_white_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_power_settings_new_white_48.imageset\outline_power_settings_new_white_48pt_3x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_settings_white_48.imageset\outline_settings_white_48pt_1x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_settings_white_48.imageset\outline_settings_white_48pt_2x.png" />
+    <ImageAsset Include="Assets.xcassets\outline_settings_white_48.imageset\outline_settings_white_48pt_3x.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
