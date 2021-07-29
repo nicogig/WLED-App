@@ -38,7 +38,7 @@ namespace WLED
             toAdd.NameIsCustom = false;
             if (await toAdd.Refresh()) //check if the service is a valid WLED light
             {
-                OnValidDeviceFound(new DeviceCreatedEventArgs(toAdd, false));
+                OnValidDeviceFound(new DeviceCreatedEventArgs(toAdd, true));
             }
         }
 
