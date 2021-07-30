@@ -1,10 +1,10 @@
-## Welcome to the new WLED app! (v1.0.4-alpha)
+## Welcome to the new WLED app! (v2.0-alpha)
 
-A brand new app for Android to discover and control your [WLED](https://github.com/Aircoookie/WLED) devices easily!
+A brand new app for Android and iOS to discover and control your [WLED](https://github.com/Aircoookie/WLED) devices easily!
 
 ![Screenshots of various menus in the WLED App, rendered on a Galaxy S20.](app-screenshots.png)
 
-iOS and UWP support coming soon.
+UWP support coming soon.
 
 ### Features:
 
@@ -12,11 +12,12 @@ iOS and UWP support coming soon.
 - Automatic Device Detection via mDNS
 - Access and control your lights from one list
 - Hide and delete devices
+- Automatic Theme switching based on Device Theme
 
 ### Planned Features:
 
 - Automatic setup when connected to WLED hotspot
-- iOS and UWP Support
+- UWP Support
 - Native settings interface when connected to v0.13 and higher
 - Better support for Palettes
 
