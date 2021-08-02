@@ -14,6 +14,10 @@ using ColorPicker.BaseClasses;
 using ColorPicker.BaseClasses.ColorPickerEventArgs;
 using Newtonsoft.Json;
 
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using Syncfusion.XForms.Buttons;
+
 namespace WLED.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -41,6 +45,11 @@ namespace WLED.Views
             brightnessSlider.MinimumTrackColor = wledDevice.ColorCurrent;
             palettesPicker.ItemsSource = wledDevice.SupportedPalettes;
             palettesPicker.SelectedIndex = wledDevice.CurrentPalette;
+            chipGroup.ItemsSource = new ObservableCollection<SfSegmentItem>
+            {
+                new SfSegmentItem() { BackgroundColor = wledDevice.ColorCurrent }
+
+            };
             if (wledDevice.StateCurrent)
             {
                 // Device is on; tint navbar maybe?

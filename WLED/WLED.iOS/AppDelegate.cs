@@ -26,6 +26,7 @@ namespace WLED.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
             ColorPickerEffects.Init();
+            Syncfusion.XForms.iOS.Buttons.SfSegmentedControlRenderer.Init();
 
             return base.FinishedLaunching(app, options);
         }

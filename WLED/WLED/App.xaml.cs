@@ -25,6 +25,10 @@ namespace WLED
 
         public App()
         {
+
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Secrets.LicenseKey);
+
+
             InitializeComponent();
 
             listview = new DevicesListView();

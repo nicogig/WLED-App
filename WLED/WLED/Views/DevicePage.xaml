@@ -6,6 +6,7 @@
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              xmlns:colorpicker="clr-namespace:ColorPicker;assembly=ColorPicker"
+             xmlns:sfbuttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              ios:Page.UseSafeArea="true"
              Title="Colors"
              IconImageSource="outline_palette_white_24"
@@ -40,6 +41,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*" />
                 <RowDefinition Height="10*" />
+                <RowDefinition Height="2*" />
                 <RowDefinition Height="2*" />
                 <RowDefinition Height="2*" />
                 <RowDefinition Height="*" />
@@ -92,9 +94,27 @@
                                     Grid.ColumnSpan="3"
                                     Margin="15" />
 
+            <sfbuttons:SfSegmentedControl 
+                Grid.Row="2" 
+                Grid.Column="0" 
+                Grid.ColumnSpan="3"
+                SegmentPadding="5"
+                SegmentHeight="40" 
+                SegmentWidth="40" 
+                SegmentBorderThickness="0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                x:Name="chipGroup">
+                <sfbuttons:SfSegmentedControl.SelectionIndicatorSettings>
+                    <sfbuttons:SelectionIndicatorSettings Color="#FFFFFF"
+                                                          Position="Border"
+                                                          CornerRadius="20" />
+                </sfbuttons:SfSegmentedControl.SelectionIndicatorSettings>
+            </sfbuttons:SfSegmentedControl>
 
 
-            <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+
+            <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
@@ -118,7 +138,7 @@
             
 
             
-            <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
+            <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
