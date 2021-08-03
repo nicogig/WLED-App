@@ -26,6 +26,7 @@ namespace WLED
         private List<string> supportedEffects;
         private JSONStateModel lastJSONStateModel;
         private JSONInfoModel lastInfoModel;
+        private List<Color> colorCombos;
 
         [XmlElement("url")]
         public string NetworkAddress
@@ -183,6 +184,13 @@ namespace WLED
             get { return lastInfoModel; } set { lastInfoModel = value; }
         }
 
+        [XmlIgnore]
+        public List<Color> ColorCombos
+        {
+            get { return colorCombos; }
+            set { colorCombos = value; }
+        }
+
 
         //constructors
         public WLEDDevice() { }
@@ -284,6 +292,10 @@ namespace WLED
             SegInfo segInfos = jsonStateModel.seg[mainseg];
             IList<int> colorIndexesPrimary = segInfos.col[0];
             ColorCurrent = Color.FromRgb(colorIndexesPrimary[0], colorIndexesPrimary[1], colorIndexesPrimary[2]);
+            ColorCombos = new List<Color>() { ColorCurrent,
+                                              Color.FromRgb(segInfos.col[1][0], segInfos.col[1][1], segInfos.col[1][2]),
+                                              Color.FromRgb(segInfos.col[2][0], segInfos.col[2][1], segInfos.col[2][2])
+                                            };
             CurrentPalette = segInfos.pal;
             CurrentStatus = DeviceStatus.Default;
             return true;
@@ -378,6 +390,10 @@ namespace WLED
             SegInfo segInfos = jsonStateModel.seg[mainseg];
             IList<int> colorIndexesPrimary = segInfos.col[0];
             ColorCurrent = Color.FromRgb(colorIndexesPrimary[0], colorIndexesPrimary[1], colorIndexesPrimary[2]);
+            ColorCombos = new List<Color>() { ColorCurrent,
+                                              Color.FromRgb(segInfos.col[1][0], segInfos.col[1][1], segInfos.col[1][2]),
+                                              Color.FromRgb(segInfos.col[2][0], segInfos.col[2][1], segInfos.col[2][2])
+                                            };
             CurrentPalette = segInfos.pal;
             return true;
         }

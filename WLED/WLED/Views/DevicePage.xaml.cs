@@ -25,6 +25,7 @@ namespace WLED.Views
     {
         string DeviceURI;
         WLEDDevice wledDevice;
+        ObservableCollection<SfSegmentItem> chipItemSource;
 
         public DevicePage(string pageURL, WLEDDevice device)
         {
@@ -45,11 +46,12 @@ namespace WLED.Views
             brightnessSlider.MinimumTrackColor = wledDevice.ColorCurrent;
             palettesPicker.ItemsSource = wledDevice.SupportedPalettes;
             palettesPicker.SelectedIndex = wledDevice.CurrentPalette;
-            chipGroup.ItemsSource = new ObservableCollection<SfSegmentItem>
+            chipItemSource = new ObservableCollection<SfSegmentItem>();
+            foreach (Color item in wledDevice.ColorCombos)
             {
-                new SfSegmentItem() { BackgroundColor = wledDevice.ColorCurrent }
-
-            };
+                chipItemSource.Add(new SfSegmentItem() { BackgroundColor = item });
+            }
+            chipGroup.ItemsSource = chipItemSource;
             if (wledDevice.StateCurrent)
             {
                 // Device is on; tint navbar maybe?
@@ -155,6 +157,7 @@ namespace WLED.Views
             wledDevice.LastJSONStateModel = model;
             wledDevice.ColorCurrent = newColor;
             brightnessSlider.MinimumTrackColor = wledDevice.ColorCurrent;
+            chipItemSource[0].BackgroundColor = newColor;
 
         }
 
