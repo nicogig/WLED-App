@@ -13,6 +13,7 @@ using WLED;
  * 
  * This project was build for and tested with Android, iOS and UWP.
  */
+[assembly: ExportFont("SegMDL2.ttf", Alias = "SegoeMDL2")]
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace WLED

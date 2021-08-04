@@ -101,14 +101,23 @@
                 SegmentPadding="5"
                 SegmentHeight="40" 
                 SegmentWidth="40" 
+                FontSize="12"
+                SegmentCornerRadius="15"
+                DisplayMode="Image"
+                FontIconFontColor="Black"
+                BackgroundColor="Transparent"
+                BorderColor="Transparent"
+                Color="Transparent"
                 SegmentBorderThickness="0"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
+                SelectionChanged="chipGroup_SelectionChanged"
                 x:Name="chipGroup">
                 <sfbuttons:SfSegmentedControl.SelectionIndicatorSettings>
                     <sfbuttons:SelectionIndicatorSettings Color="#FFFFFF"
-                                                          Position="Border"
-                                                          CornerRadius="20" />
+                                                          
+                                                          Position="Bottom"
+                                                          CornerRadius="30" />
                 </sfbuttons:SfSegmentedControl.SelectionIndicatorSettings>
             </sfbuttons:SfSegmentedControl>
 

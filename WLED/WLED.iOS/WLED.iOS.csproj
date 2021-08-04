@@ -417,6 +417,7 @@
     <ImageAsset Include="Assets.xcassets\outline_settings_white_48.imageset\outline_settings_white_48pt_3x.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <BundleResource Include="Resources\SegMDL2.ttf" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

@@ -26,15 +26,16 @@ namespace WLED.Views
         string DeviceURI;
         WLEDDevice wledDevice;
         ObservableCollection<SfSegmentItem> chipItemSource;
+        string SegoeFontFamily = "SegoeMDL2";
 
         public DevicePage(string pageURL, WLEDDevice device)
         {
             InitializeComponent();
+// SegoeFontFamily = Device.RuntimePlatform == Device.iOS ? "Segoe MDL2 Assets" : "SegMDL2.ttf";
             DeviceURI = pageURL;
             wledDevice = device;
             InitPage(device);
             colourWheel.SelectedColorChanged += colourWheel_SelectedColorChanged;
-            
             
         }
 
@@ -49,7 +50,7 @@ namespace WLED.Views
             chipItemSource = new ObservableCollection<SfSegmentItem>();
             foreach (Color item in wledDevice.ColorCombos)
             {
-                chipItemSource.Add(new SfSegmentItem() { BackgroundColor = item });
+                chipItemSource.Add(new SfSegmentItem() { IconFont = "\uE91F", FontIconFontColor = item, Text = "Square", FontIconFontSize = 32, FontIconFontFamily = SegoeFontFamily, SelectionBackgroundColor = Color.Transparent });
             }
             chipGroup.ItemsSource = chipItemSource;
             if (wledDevice.StateCurrent)
@@ -147,17 +148,18 @@ namespace WLED.Views
             
             // Colour is changed, proceed to obtain and update
             Color newColor = e.NewColor;
+            int selectedIndex = chipGroup.SelectedIndex;
             JSONStateModel model = wledDevice.LastJSONStateModel;
             int newRed = Convert.ToInt32(newColor.R * 255);
             int newGreen = Convert.ToInt32(newColor.G * 255);
             int newBlue = Convert.ToInt32(newColor.B * 255);
-            model.seg[model.mainseg].col[0] = new List<int>() { newRed, newGreen, newBlue };
+            model.seg[model.mainseg].col[selectedIndex] = new List<int>() { newRed, newGreen, newBlue };
             //bool callResult = await wledDevice.SendStateUpdate(model);
             RateLimitedSender.SendAPICall(wledDevice, model);
             wledDevice.LastJSONStateModel = model;
             wledDevice.ColorCurrent = newColor;
             brightnessSlider.MinimumTrackColor = wledDevice.ColorCurrent;
-            chipItemSource[0].BackgroundColor = newColor;
+            chipItemSource[selectedIndex].FontIconFontColor = newColor;
 
         }
 
@@ -210,6 +212,14 @@ namespace WLED.Views
                 }
             }
 
+        }
+
+        private void chipGroup_SelectionChanged(object sender, Syncfusion.XForms.Buttons.SelectionChangedEventArgs e)
+        {
+            int newSelection = e.Index;
+            Color currentColor = chipItemSource[newSelection].FontIconFontColor;
+            brightnessSlider.MinimumTrackColor = currentColor;
+            colourWheel.SelectedColor = currentColor;
         }
     }
 }
