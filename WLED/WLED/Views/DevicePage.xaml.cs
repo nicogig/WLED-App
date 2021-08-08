@@ -239,18 +239,24 @@ namespace WLED.Views
                 Stream stream = await photo.OpenReadAsync();
                 Color dominantColor = Utilities.ImageUtils.GetAverageColor(stream);
                 changeColour(dominantColor);
-                Console.WriteLine($"CapturePhotoAsync COMPLETED");
             }
-            catch (FeatureNotSupportedException fnsEx)
+            catch (FeatureNotSupportedException)
             {
-                // Feature is not supported on the device
+                await DisplayAlert(AppResources.FeatureNotSupportedTitle,
+                                   AppResources.FeatureNotSupportedDesc,
+                                   AppResources.OK);
             }
-            catch (PermissionException pEx)
+            catch (PermissionException)
             {
-                // Permissions not granted
+                await DisplayAlert(AppResources.PermissionNotGrantedTitle,
+                                   AppResources.PermissionNotGrantedDesc,
+                                   AppResources.OK);
             }
             catch (Exception ex)
             {
+                await DisplayAlert(AppResources.CameraExceptionTitle,
+                    AppResources.CameraExceptionDesc,
+                    AppResources.OK);
                 Console.WriteLine($"CapturePhotoAsync THREW: {ex.Message}");
             }
         }

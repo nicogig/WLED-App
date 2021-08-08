@@ -79,6 +79,24 @@ namespace WLED.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Something happened, and we couldn&apos;t process your picture. Please try again. If this happens again, get in touch..
+        /// </summary>
+        internal static string CameraExceptionDesc {
+            get {
+                return ResourceManager.GetString("CameraExceptionDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There was an error..
+        /// </summary>
+        internal static string CameraExceptionTitle {
+            get {
+                return ResourceManager.GetString("CameraExceptionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cannot connect to light..
         /// </summary>
         internal static string CannotConnect {
@@ -138,6 +156,24 @@ namespace WLED.Resources {
         internal static string Effects {
             get {
                 return ResourceManager.GetString("Effects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your device does not seem to have a camera, or the camera is not responding. If you think this is a mistake, get in touch..
+        /// </summary>
+        internal static string FeatureNotSupportedDesc {
+            get {
+                return ResourceManager.GetString("FeatureNotSupportedDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can&apos;t use this feature..
+        /// </summary>
+        internal static string FeatureNotSupportedTitle {
+            get {
+                return ResourceManager.GetString("FeatureNotSupportedTitle", resourceCulture);
             }
         }
         
@@ -232,6 +268,15 @@ namespace WLED.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        internal static string OK {
+            get {
+                return ResourceManager.GetString("OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to On.
         /// </summary>
         internal static string On {
@@ -246,6 +291,24 @@ namespace WLED.Resources {
         internal static string OtherLights {
             get {
                 return ResourceManager.GetString("OtherLights", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It seems that you have not granted the app the permission to use the camera. To use this feature, please go to your device&apos;s settings and allow WLED to use the camera. Your pictures will only be manipulated locally..
+        /// </summary>
+        internal static string PermissionNotGrantedDesc {
+            get {
+                return ResourceManager.GetString("PermissionNotGrantedDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We need your permission to use this feature..
+        /// </summary>
+        internal static string PermissionNotGrantedTitle {
+            get {
+                return ResourceManager.GetString("PermissionNotGrantedTitle", resourceCulture);
             }
         }
         

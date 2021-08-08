@@ -123,6 +123,12 @@
   <data name="And" xml:space="preserve">
     <value>and</value>
   </data>
+  <data name="CameraExceptionDesc" xml:space="preserve">
+    <value>Something happened, and we couldn't process your picture. Please try again. If this happens again, get in touch.</value>
+  </data>
+  <data name="CameraExceptionTitle" xml:space="preserve">
+    <value>There was an error.</value>
+  </data>
   <data name="CannotConnect" xml:space="preserve">
     <value>Cannot connect to light.</value>
   </data>
@@ -143,6 +149,12 @@
   </data>
   <data name="Effects" xml:space="preserve">
     <value>Effects</value>
+  </data>
+  <data name="FeatureNotSupportedDesc" xml:space="preserve">
+    <value>Your device does not seem to have a camera, or the camera is not responding. If you think this is a mistake, get in touch.</value>
+  </data>
+  <data name="FeatureNotSupportedTitle" xml:space="preserve">
+    <value>You can't use this feature.</value>
   </data>
   <data name="FindLights" xml:space="preserve">
     <value>Find lights in your network:</value>
@@ -174,11 +186,20 @@
   <data name="Off" xml:space="preserve">
     <value>Off</value>
   </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
   <data name="On" xml:space="preserve">
     <value>On</value>
   </data>
   <data name="OtherLights" xml:space="preserve">
     <value>other lights!</value>
+  </data>
+  <data name="PermissionNotGrantedDesc" xml:space="preserve">
+    <value>It seems that you have not granted the app the permission to use the camera. To use this feature, please go to your device's settings and allow WLED to use the camera. Your pictures will only be manipulated locally.</value>
+  </data>
+  <data name="PermissionNotGrantedTitle" xml:space="preserve">
+    <value>We need your permission to use this feature.</value>
   </data>
   <data name="SecurityUpdates" xml:space="preserve">
     <value>Security &amp; Updates</value>
