@@ -2,15 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:wled="clr-namespace:WLED"
+             xmlns:resources="clr-namespace:WLED.Resources"
              x:Class="WLED.DeviceModificationListViewPage"
-             Title="Delete or Hide Devices"
+             Title="{x:Static resources:AppResources.DeviceModificationTitle}"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true"
              Style="{StaticResource PageStyle}" >
 
     <StackLayout BackgroundColor="{AppThemeBinding Light={StaticResource LightPageBackgroundColor}, Dark={StaticResource DarkPageBackgroundColor}}">
         
-        <Label Text="Click on devices to hide them!" 
+        <Label Text="{x:Static resources:AppResources.ClickHint}" 
                HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
                Margin="10"
                Style="{StaticResource SmallLabelStyle}"/>

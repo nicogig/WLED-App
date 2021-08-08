@@ -4,7 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
 using WLED.Models;
-using WLED.Utilities;
+using WLED.Resources;
 using ColorPicker.BaseClasses.ColorPickerEventArgs;
 using System.Collections.ObjectModel;
 using Syncfusion.XForms.Buttons;
@@ -60,7 +60,7 @@ namespace WLED.Views
                     bgLeft.BackgroundColor = (Color)Application.Current.Resources["LightButtonPressed"];
                     labelLeft.BackgroundColor = (Color)Application.Current.Resources["LightButtonPressed"];
                 }
-                labelLeft.Text = "Off";
+                labelLeft.Text = AppResources.Off;
                 nightLight.IsEnabled = true;
                 brightnessSlider.IsEnabled = true;
                 palettesPicker.IsEnabled = true;
@@ -111,7 +111,7 @@ namespace WLED.Views
                     nightLight.BackgroundColor = (Color)Application.Current.Resources["LightNavigationBarColor"];
                     labelCenter.BackgroundColor = (Color)Application.Current.Resources["LightNavigationBarColor"];
                 }
-                labelLeft.Text = "On";
+                labelLeft.Text = AppResources.On;
                 // Disable all controls, as device isn't on
                 nightLight.IsEnabled = false;
                 brightnessSlider.IsEnabled = false;

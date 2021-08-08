@@ -4,17 +4,18 @@ using Xamarin.Forms.Xaml;
 using System.Collections.ObjectModel;
 using System.Linq;
 using WLED.Views;
-using WLED;
+using System.Resources;
 
 /*
- * WLED App v1.0.2
+ * WLED App
+ * (c) 2021 Nicola Gigante
  * (c) 2019 Christian Schwinne
  * Licensed under the MIT license
  * 
- * This project was build for and tested with Android, iOS and UWP.
+ * This project was build for and tested with Android and iOS.
  */
 [assembly: ExportFont("SegMDL2.ttf", Alias = "SegoeMDL2")]
-
+[assembly: NeutralResourcesLanguage("en-US")]
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace WLED
 {

@@ -1,10 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:wled="clr-namespace:WLED"
-             xmlns:wledviews="clr-namespace:WLED.Views"
+             xmlns:resources="clr-namespace:WLED.Resources"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              x:Class="WLED.Views.DevicesListView"
              ios:Page.UseSafeArea="True"
              NavigationPage.HasBackButton="False"
@@ -48,13 +46,13 @@
     <StackLayout>
 
         <Label x:Name="welcomeLabel"
-               Text="Welcome!"
+               Text="{x:Static resources:AppResources.WelcomeLabel}"
                Font="Bold, 25"
                Style="{StaticResource LabelStyle}" />
 
         <Label x:Name="instructionLabel"
                Font="18"
-               Text="Please use the &quot;+&quot; button to add your WLED lights!"
+               Text="{x:Static resources:AppResources.WelcomeInstruction}"
                HorizontalTextAlignment="Center"
                Style="{StaticResource LabelStyle}" />
 

@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using WLED.Views;
+using WLED.Resources;
 
 namespace WLED
 {
@@ -40,7 +41,7 @@ namespace WLED
             if (address.EndsWith("/")) address = address.Substring(0, address.Length -1);
             if (name == null || name.Length == 0)
             {
-                name = "(New Light)";
+                name = AppResources.DefaultName;
                 device.NameIsCustom = false;
             }
 
@@ -62,18 +63,18 @@ namespace WLED
             if (discoveryMode)
             {
                 //Start mDNS discovery
-                b.Text = "Stop discovery";
+                b.Text = AppResources.StopDiscovery;
                 devicesFoundCount = 0;
                 discovery.ValidDeviceFound += OnDeviceCreated;
                 discoveryResultLabel.IsVisible = true;
-                discoveryResultLabel.Text = "Found no lights yet...";
+                discoveryResultLabel.Text = AppResources.NoLightsFound;
                 discovery.StartDiscovery();
             } else
             {
                 //Stop mDNS discovery
                 discovery.StopDiscovery();
                 discovery.ValidDeviceFound -= OnDeviceCreated;
-                b.Text = "Discover lights...";
+                b.Text = AppResources.DiscoverLights;
             }      
         }
 
@@ -88,10 +89,10 @@ namespace WLED
             devicesFoundCount++;
             if (devicesFoundCount == 1)
             {
-                discoveryResultLabel.Text = "Found " + e.CreatedDevice.Name + "!";
+                discoveryResultLabel.Text = $"{AppResources.Found} {e.CreatedDevice.Name}!";
             } else
             {
-                discoveryResultLabel.Text = "Found " + e.CreatedDevice.Name + " and " + (devicesFoundCount - 1) + " other lights!";
+                discoveryResultLabel.Text = $"{AppResources.Found} {e.CreatedDevice.Name} {AppResources.And} {(devicesFoundCount - 1)} {AppResources.OtherLights}";
             }
 
             OnDeviceCreated(e);

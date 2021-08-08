@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:resources="clr-namespace:WLED.Resources"
              x:Class="WLED.Views.DeviceEffectsPage"
-             Title="Effects"
+             Title="{x:Static resources:AppResources.Effects}"
              IconImageSource="outline_filter_vintage_white_24"
              Style="{StaticResource PageStyle}">
     <ContentPage.Content>

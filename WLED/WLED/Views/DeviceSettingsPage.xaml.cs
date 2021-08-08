@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using WLED.Models;
+using WLED.Resources;
 
 namespace WLED.Views
 {
@@ -22,7 +22,7 @@ namespace WLED.Views
             deviceBrand.Text = device.LastJSONInfoModel.brand + " " + device.LastJSONInfoModel.product;
             deviceVersion.Text = "v. " + device.LastJSONInfoModel.ver;
             deviceAddress.Text = device.LastJSONInfoModel.mac.ToUpper();
-            listView.ItemsSource = new[] { "WiFi Setup", "LED Preferences", "Sync Interfaces", "Time & Macros", "Security & Updates" };
+            listView.ItemsSource = new[] { AppResources.WiFiSetup, AppResources.LEDPreferences, AppResources.SyncInterfaces, AppResources.TimeMacros, AppResources.SecurityUpdates };
         }
 
         private async void listView_ItemTapped(object sender, ItemTappedEventArgs e)

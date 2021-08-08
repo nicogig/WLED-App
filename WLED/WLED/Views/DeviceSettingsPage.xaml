@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WLED.Views.DeviceSettingsPage"
-             Title="Settings"
+             xmlns:resources="clr-namespace:WLED.Resources"
+             Title="{x:Static resources:AppResources.Settings}"
              IconImageSource="outline_settings_white_24"
              Style="{StaticResource PageStyle}">
     
