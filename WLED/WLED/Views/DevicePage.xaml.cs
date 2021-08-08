@@ -1,22 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
-using WLED;
 using WLED.Models;
-using ColorPicker;
-using ColorPicker.BaseClasses;
+using WLED.Utilities;
 using ColorPicker.BaseClasses.ColorPickerEventArgs;
-using Newtonsoft.Json;
-
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using Syncfusion.XForms.Buttons;
+using System.Threading.Tasks;
+using System.Linq;
+using System.IO;
 
 namespace WLED.Views
 {
@@ -154,13 +148,28 @@ namespace WLED.Views
             int newGreen = Convert.ToInt32(newColor.G * 255);
             int newBlue = Convert.ToInt32(newColor.B * 255);
             model.seg[model.mainseg].col[selectedIndex] = new List<int>() { newRed, newGreen, newBlue };
-            //bool callResult = await wledDevice.SendStateUpdate(model);
             RateLimitedSender.SendAPICall(wledDevice, model);
             wledDevice.LastJSONStateModel = model;
             wledDevice.ColorCurrent = newColor;
             brightnessSlider.MinimumTrackColor = wledDevice.ColorCurrent;
             chipItemSource[selectedIndex].FontIconFontColor = newColor;
 
+        }
+
+        private void changeColour(Color newColor)
+        {
+            int selectedIndex = chipGroup.SelectedIndex;
+            JSONStateModel model = wledDevice.LastJSONStateModel;
+            int newRed = Convert.ToInt32(newColor.R * 255);
+            int newGreen = Convert.ToInt32(newColor.G * 255);
+            int newBlue = Convert.ToInt32(newColor.B * 255);
+            model.seg[model.mainseg].col[selectedIndex] = new List<int>() { newRed, newGreen, newBlue };
+            RateLimitedSender.SendAPICall(wledDevice, model);
+            wledDevice.LastJSONStateModel = model;
+            wledDevice.ColorCurrent = newColor;
+            brightnessSlider.MinimumTrackColor = wledDevice.ColorCurrent;
+            chipItemSource[selectedIndex].FontIconFontColor = newColor;
+            colourWheel.SelectedColor = newColor;
         }
 
         private async void brightnessSlider_DragCompleted(object sender, EventArgs e)
@@ -220,6 +229,30 @@ namespace WLED.Views
             Color currentColor = chipItemSource[newSelection].FontIconFontColor;
             brightnessSlider.MinimumTrackColor = currentColor;
             colourWheel.SelectedColor = currentColor;
+        }
+
+        private async void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                var photo = await MediaPicker.CapturePhotoAsync();
+                Stream stream = await photo.OpenReadAsync();
+                Color dominantColor = Utilities.ImageUtils.GetAverageColor(stream);
+                changeColour(dominantColor);
+                Console.WriteLine($"CapturePhotoAsync COMPLETED");
+            }
+            catch (FeatureNotSupportedException fnsEx)
+            {
+                // Feature is not supported on the device
+            }
+            catch (PermissionException pEx)
+            {
+                // Permissions not granted
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"CapturePhotoAsync THREW: {ex.Message}");
+            }
         }
     }
 }

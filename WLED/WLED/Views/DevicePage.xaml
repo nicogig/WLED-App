@@ -88,11 +88,34 @@
 
             </Grid>
 
-            <colorpicker:ColorWheel x:Name="colourWheel" 
-                                    Grid.Row="1" 
+            <Grid Grid.Row="1"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="10*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <colorpicker:ColorWheel x:Name="colourWheel" 
+                                    Grid.Row="0" 
+                                    Grid.RowSpan="2"
                                     Grid.Column="0" 
-                                    Grid.ColumnSpan="3"
-                                    Margin="15" />
+                                    Margin="15,15,-10,15" />
+                <ImageButton Grid.Row="0"
+                        Grid.Column="1"
+                        Source="{AppThemeBinding Dark=baseline_photo_camera_white_48, Light=baseline_photo_camera_black_48}"
+                        BackgroundColor="{AppThemeBinding Dark={StaticResource DarkPageBackgroundColor}, Light={StaticResource LightPageBackgroundColor}}"
+                        Clicked="ImageButton_Clicked"
+                        Scale="0.6"
+                        Margin="-40,10,10,-40"/>
+
+            </Grid>
+
+            
 
             <sfbuttons:SfSegmentedControl 
                 Grid.Row="2" 

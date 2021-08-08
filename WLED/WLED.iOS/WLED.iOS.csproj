@@ -129,6 +129,60 @@
     <ImageAsset Include="Assets.xcassets\baseline_nightlight_white_48.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_photo_camera_black_48.imageset\baseline_photo_camera_black_48pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_photo_camera_black_48.imageset\baseline_photo_camera_black_48pt_1x1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_photo_camera_black_48.imageset\baseline_photo_camera_black_48pt_1x2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_photo_camera_black_48.imageset\baseline_photo_camera_black_48pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_photo_camera_black_48.imageset\baseline_photo_camera_black_48pt_2x1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_photo_camera_black_48.imageset\baseline_photo_camera_black_48pt_2x2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_photo_camera_black_48.imageset\baseline_photo_camera_black_48pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_photo_camera_black_48.imageset\baseline_photo_camera_black_48pt_3x1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_photo_camera_black_48.imageset\baseline_photo_camera_black_48pt_3x2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_photo_camera_white_48.imageset\baseline_photo_camera_white_48pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_photo_camera_white_48.imageset\baseline_photo_camera_white_48pt_1x1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_photo_camera_white_48.imageset\baseline_photo_camera_white_48pt_1x2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_photo_camera_white_48.imageset\baseline_photo_camera_white_48pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_photo_camera_white_48.imageset\baseline_photo_camera_white_48pt_2x1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_photo_camera_white_48.imageset\baseline_photo_camera_white_48pt_2x2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_photo_camera_white_48.imageset\baseline_photo_camera_white_48pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_photo_camera_white_48.imageset\baseline_photo_camera_white_48pt_3x1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_photo_camera_white_48.imageset\baseline_photo_camera_white_48pt_3x2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\circle_logo.imageset\circle_logo.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -139,6 +193,12 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\circle_logo.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_photo_camera_black_48.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_photo_camera_white_48.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_24.imageset\outline_filter_vintage_white_24pt_1x.png">
@@ -587,6 +647,9 @@
   <ItemGroup>
     <PackageReference Include="ColorPicker.Xamarin.Forms">
       <Version>1.3.4.18-rc</Version>
+    </PackageReference>
+    <PackageReference Include="ksemenenko.ColorThief">
+      <Version>1.1.1.4</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.Buttons">
       <Version>19.2.0.49</Version>
