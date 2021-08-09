@@ -141,6 +141,9 @@
   <data name="DefaultName" xml:space="preserve">
     <value>(New Light)</value>
   </data>
+  <data name="DeviceAddPageTitle" xml:space="preserve">
+    <value>Add a Device</value>
+  </data>
   <data name="DeviceModificationTitle" xml:space="preserve">
     <value>Delete or Hide Devices</value>
   </data>

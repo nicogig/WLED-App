@@ -133,7 +133,7 @@ namespace WLED.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Add a Device.
         /// </summary>
         internal static string DeviceAddPageTitle {
             get {
