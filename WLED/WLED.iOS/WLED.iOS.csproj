@@ -228,7 +228,7 @@
     <ImageAsset Include="Assets.xcassets\outline_settings_white_24.imageset\outline_settings_white_24pt_3x.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\sad_cat_akami.imageset\Contents.json">
+    <ImageAsset Include="Assets.xcassets\sad_cat_akemi.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\wled_logo_akemi.imageset\Contents.json">
@@ -574,13 +574,13 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\appiconmaker\Icon-88.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\sad_cat_akami.imageset\sad_cat_akemi@1.png">
+    <ImageAsset Include="Assets.xcassets\sad_cat_akemi.imageset\sad_cat_akemi@1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\sad_cat_akami.imageset\sad_cat_akemi@2.png">
+    <ImageAsset Include="Assets.xcassets\sad_cat_akemi.imageset\sad_cat_akemi@2.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\sad_cat_akami.imageset\sad_cat_akemi@3.png">
+    <ImageAsset Include="Assets.xcassets\sad_cat_akemi.imageset\sad_cat_akemi@3.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-1024.png">

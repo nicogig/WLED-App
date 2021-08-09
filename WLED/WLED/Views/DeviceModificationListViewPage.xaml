@@ -50,7 +50,7 @@
                                     Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" />
 
 
-                            <Image Source="{AppThemeBinding Dark=baseline_delete_white_24, Light=baseline_delete_black_24}" 
+                            <Image Source="{AppThemeBinding Dark=baseline_delete_white_24.png, Light=baseline_delete_black_24.png}" 
                                    Scale ="0.8" 
                                    Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" InputTransparent="True" BackgroundColor="Transparent"/>
                         </Grid>

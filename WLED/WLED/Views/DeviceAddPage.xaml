@@ -4,7 +4,7 @@
              xmlns:wled="clr-namespace:WLED"
              xmlns:resources="clr-namespace:WLED.Resources"
              x:Class="WLED.DeviceAddPage"
-             Title="Add a Device"
+             Title="{x:Static resources:AppResources.DeviceAddPageTitle}"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
              ios:Page.UseSafeArea="true"
              Style="{StaticResource PageStyle}">
@@ -28,7 +28,8 @@
     </ContentPage.Resources>
 
     <NavigationPage.TitleView>
-        <Grid Style="{StaticResource NavigationBarGrid}">
+        <Grid Style="{StaticResource NavigationBarGrid}"
+              Margin="50,0,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="45" />
             </Grid.RowDefinitions>
@@ -38,7 +39,7 @@
                 <ColumnDefinition Width="65" />
             </Grid.ColumnDefinitions>
             <ImageButton x:Name="imageRight"
-                         Source="{AppThemeBinding Dark=baseline_done_white_24, Light=baseline_done_black_24}"
+                         Source="{AppThemeBinding Dark=baseline_done_white_24.png, Light=baseline_done_black_24.png}"
                          Style="{StaticResource NavBarImageButton}"
                          Clicked="OnEntryCompleted"
                          Grid.Column="2" />

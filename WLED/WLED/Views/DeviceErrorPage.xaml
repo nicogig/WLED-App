@@ -19,7 +19,7 @@
             </Grid.ColumnDefinitions>
 
             <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Vertical" Spacing="0">
-                <Image Source="sad_cat_akemi" Scale="0.5" />
+                <Image Source="sad_cat_akemi.png" Scale="0.5" />
                 <Label Text="{x:Static resources:AppResources.CannotConnect}"
                        VerticalTextAlignment="Start" 
                        HorizontalTextAlignment="Center"

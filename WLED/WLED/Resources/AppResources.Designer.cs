@@ -133,6 +133,15 @@ namespace WLED.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string DeviceAddPageTitle {
+            get {
+                return ResourceManager.GetString("DeviceAddPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete or Hide Devices.
         /// </summary>
         internal static string DeviceModificationTitle {

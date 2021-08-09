@@ -37,7 +37,7 @@
                          Grid.Column="0" />
             <Image Source="wled_logo_akemi.png" Scale="0.8" Grid.Column="1" />
             <ImageButton x:Name="imageRight"
-                         Source="{AppThemeBinding Dark=baseline_add_white_24, Light=baseline_add_black_24}"
+                         Source="{AppThemeBinding Dark=baseline_add_white_24.png, Light=baseline_add_black_24.png}"
                          Style="{StaticResource NavBarImageButton}"
                          Clicked="OnAddButtonTapped"
                          Grid.Column="2" />
@@ -96,7 +96,7 @@
                                         BackgroundColor="{AppThemeBinding Light={StaticResource LightPageBackgroundColor}, Dark={StaticResource DarkPageBackgroundColor}}" 
                                         BorderColor="{Binding ColorCurrent}" BorderWidth="4"
                                         Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" />
-                                <Image Source="{AppThemeBinding Light=outline_power_settings_new_black_48, Dark=outline_power_settings_new_white_48}" 
+                                <Image Source="{AppThemeBinding Light=outline_power_settings_new_black_48.png, Dark=outline_power_settings_new_white_48.png}" 
                                        Scale ="0.8" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" InputTransparent="True" BackgroundColor="Transparent"/>
 
                                 <Slider Maximum="255.1" Minimum="0.9" Value="{Binding BrightnessCurrent, Mode=TwoWay}"
