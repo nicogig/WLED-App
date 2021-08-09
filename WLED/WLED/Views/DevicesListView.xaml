@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:WLED.Resources"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             
              x:Class="WLED.Views.DevicesListView"
              ios:Page.UseSafeArea="True"
              NavigationPage.HasBackButton="False"
@@ -30,7 +31,7 @@
                 <ColumnDefinition Width="65" />
             </Grid.ColumnDefinitions>
             <ImageButton x:Name="imageLeft"
-                         Source="{AppThemeBinding Dark=baseline_delete_white_24, Light=baseline_delete_black_24}"
+                         Source="{AppThemeBinding Dark=baseline_delete_white_24.png, Light=baseline_delete_black_24.png}"
                          Style="{StaticResource NavBarImageButton}"
                          Clicked="OnDeleteButtonTapped"
                          Grid.Column="0" />

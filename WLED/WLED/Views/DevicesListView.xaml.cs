@@ -35,7 +35,6 @@ namespace WLED.Views
             NavigationPage.SetHasBackButton(this, false);
             NavigationPage.SetBackButtonTitle(this, "");
 
-
         }
 
         private void OnRefresh(object sender, EventArgs e)
