@@ -367,7 +367,7 @@ namespace WLED.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please use the &amp;quot;+&amp;quot; button to add your WLED lights!.
+        ///   Looks up a localized string similar to Please use the + button to add your WLED lights!.
         /// </summary>
         internal static string WelcomeInstruction {
             get {

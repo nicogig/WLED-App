@@ -220,7 +220,7 @@
     <value>Time &amp; Macros</value>
   </data>
   <data name="WelcomeInstruction" xml:space="preserve">
-    <value>Please use the &amp;quot;+&amp;quot; button to add your WLED lights!</value>
+    <value>Please use the + button to add your WLED lights!</value>
   </data>
   <data name="WelcomeLabel" xml:space="preserve">
     <value>Welcome!</value>
