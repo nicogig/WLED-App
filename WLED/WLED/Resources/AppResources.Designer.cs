@@ -322,6 +322,15 @@ namespace WLED.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Trying to reach your light....
+        /// </summary>
+        internal static string ReachingLight {
+            get {
+                return ResourceManager.GetString("ReachingLight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Security &amp; Updates.
         /// </summary>
         internal static string SecurityUpdates {

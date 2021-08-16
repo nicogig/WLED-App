@@ -57,6 +57,19 @@
                HorizontalTextAlignment="Center"
                Style="{StaticResource LabelStyle}" />
 
+        <ActivityIndicator IsVisible="False"
+                           IsRunning="False"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           Margin="20,40,20,20"
+                           x:Name="activityIndicator" />
+        <Label x:Name="connectingLabel"
+               Text="{x:Static resources:AppResources.ReachingLight}"
+               Font="18"
+               IsVisible="False"
+               Margin="20,0,20,40"
+               Style="{StaticResource LabelStyle}" />
+
         <ListView x:Name="DeviceListView"
                 ItemsSource="{Binding DeviceList}"
                 ItemTapped="OnDeviceTapped"
@@ -90,7 +103,6 @@
                                 <Label Text="{Binding Status}" 
                                        Style="{StaticResource SmallLabelStyle}"
                                        Grid.Row="1" Grid.Column="0" />
-                                
                                 <Button Clicked="OnPowerButtonTapped" 
                                         BorderRadius="32" 
                                         BackgroundColor="{AppThemeBinding Light={StaticResource LightPageBackgroundColor}, Dark={StaticResource DarkPageBackgroundColor}}" 

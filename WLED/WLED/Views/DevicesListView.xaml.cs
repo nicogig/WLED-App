@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Timers;
 using System.Xml.Serialization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -126,10 +127,27 @@ namespace WLED.Views
             ((ListView)sender).SelectedItem = null;
 
             if (!(e.Item is WLEDDevice targetDevice)) return;
-
-            var page = new DeviceControlPage("http://" + targetDevice.NetworkAddress, targetDevice);
-            await Navigation.PushAsync(page);
+            if (targetDevice.hasRefreshed) 
+            {
+                var page = new DeviceControlPage("http://" + targetDevice.NetworkAddress, targetDevice);
+                await Navigation.PushAsync(page);
+            }
+            else
+            {
+                activityIndicator.IsVisible = true;
+                activityIndicator.IsRunning = true;
+                connectingLabel.IsVisible = true;
+                await System.Threading.Tasks.Task.Delay(5000);
+                activityIndicator.IsRunning = false;
+                activityIndicator.IsVisible = false;
+                connectingLabel.IsVisible = false;
+                var page = new DeviceControlPage("http://" + targetDevice.NetworkAddress, targetDevice);
+                await Navigation.PushAsync(page);
+            }
+            
         }
+
+
 
         internal async void OpenAPDeviceControlPage()
         {

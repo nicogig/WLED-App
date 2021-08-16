@@ -25,12 +25,10 @@ namespace WLED.Views
         public DevicePage(string pageURL, WLEDDevice device)
         {
             InitializeComponent();
-// SegoeFontFamily = Device.RuntimePlatform == Device.iOS ? "Segoe MDL2 Assets" : "SegMDL2.ttf";
             DeviceURI = pageURL;
             wledDevice = device;
-            InitPage(device);
+            InitPage(device); 
             colourWheel.SelectedColorChanged += colourWheel_SelectedColorChanged;
-            
         }
 
         private void InitPage (WLEDDevice device)

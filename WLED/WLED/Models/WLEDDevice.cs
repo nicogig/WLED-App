@@ -21,6 +21,7 @@ namespace WLED
         private bool stateCurrent = false;                                      //Is the light currently on?
         private bool isEnabled = true;                                          //Disabled devices don't get polled or show up in the list
         private bool wasDeviceUpdated = false;
+        public bool hasRefreshed = false;
         private double brightnessReceived = 0.9, brightnessCurrent = 0.9;       //There are two vars for brightness to discern API responses from slider updates
         private List<string> supportedPalettes;
         private List<string> supportedEffects;
@@ -263,7 +264,11 @@ namespace WLED
         {
             if (!IsEnabled) return false;
             string response = await MakeConnection("");
-            if (response == null || response == "err") return false;
+            if (response == null || response == "err")
+            {
+                hasRefreshed = true;
+                return false;
+            }
             JSONMainModel model = new JSONMainModel();
             try
             {
@@ -272,6 +277,7 @@ namespace WLED
             catch (Exception)
             {
                 CurrentStatus = DeviceStatus.Error;
+                hasRefreshed = true;
                 return false;
             }
             JSONInfoModel jsonInfoModel = model.info;
@@ -298,6 +304,7 @@ namespace WLED
                                             };
             CurrentPalette = segInfos.pal;
             CurrentStatus = DeviceStatus.Default;
+            hasRefreshed = true;
             return true;
         }
 
@@ -450,7 +457,11 @@ namespace WLED
         public async Task<bool> Refresh() //fetches updated values from WLED device
         {
             if (!IsEnabled) return false;
-            return await GetInfo() && await GetStatus();
+            hasRefreshed = false;
+            bool getInfoResult = await GetInfo();
+            bool getStatusResult = await GetStatus();
+            hasRefreshed = true;
+            return getInfoResult && getStatusResult;
         }
 
         public int CompareTo(object comp) //compares devices in alphabetic order based on name

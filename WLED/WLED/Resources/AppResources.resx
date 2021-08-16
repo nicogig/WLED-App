@@ -204,6 +204,9 @@
   <data name="PermissionNotGrantedTitle" xml:space="preserve">
     <value>We need your permission to use this feature.</value>
   </data>
+  <data name="ReachingLight" xml:space="preserve">
+    <value>Trying to reach your light...</value>
+  </data>
   <data name="SecurityUpdates" xml:space="preserve">
     <value>Security &amp; Updates</value>
   </data>
