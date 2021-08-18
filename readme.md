@@ -1,4 +1,4 @@
-## Welcome to the new WLED app! (v2.0-alpha)
+## Welcome to the new WLED app! (v2.0)
 
 A brand new app for Android, iOS, and Windows to discover and control your [WLED](https://github.com/Aircoookie/WLED) devices easily!
 
@@ -6,24 +6,26 @@ A brand new app for Android, iOS, and Windows to discover and control your [WLED
 
 ### How to Download:
 
-- Android: See Releases.
-- UWP: See Releases.
+- Android: See [Releases](https://github.com/nicogig/WLED-App/releases/).
+- UWP: See [Releases](https://github.com/nicogig/WLED-App/releases/).
 - iPhone: Available on TestFlight [here](https://testflight.apple.com/join/7X5jBzH1).
 
 ### Features:
 
-- Native UX
-- Automatic Device Detection via mDNS
-- Access and control your lights from one list
-- Hide and delete devices
-- Automatic Theme switching based on Device Theme
+- Native UX.
+- Automatic Device Detection via mDNS.
+- Access and control your lights from one list.
+- Hide and delete devices.
+- Automatic Theme switching based on Device Theme.
+- Edit Primary, Secondary and Tertiary colours of the Default palette.
+- Take a picture and let the app choose the dominant colour and apply it to your WLED!
 
 ### Planned Features:
 
 - Automatic setup when connected to WLED hotspot
-- UWP Support
 - Native settings interface when connected to v0.13 and higher
 - Better support for Palettes
+- Advanced UI
 
 
 
