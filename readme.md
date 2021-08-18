@@ -1,10 +1,14 @@
 ## Welcome to the new WLED app! (v2.0-alpha)
 
-A brand new app for Android and iOS to discover and control your [WLED](https://github.com/Aircoookie/WLED) devices easily!
+A brand new app for Android, iOS, and Windows to discover and control your [WLED](https://github.com/Aircoookie/WLED) devices easily!
 
 ![Screenshots of various menus in the WLED App, rendered on a Galaxy S20.](app-screenshots.png)
 
-UWP support coming soon.
+### How to Download:
+
+- Android: See Releases.
+- UWP: See Releases.
+- iPhone: Available on TestFlight [here](https://testflight.apple.com/join/7X5jBzH1).
 
 ### Features:
 
