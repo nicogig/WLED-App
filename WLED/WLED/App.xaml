@@ -17,6 +17,7 @@
         <Color x:Key="LightSecondaryTextColor">White</Color>
         <Color x:Key="LightTertiaryTextColor">Gray</Color>
         <Color x:Key="LightButtonPressed">#C2C2C2</Color>
+        <Color x:Key="LightPickerBackground">#B4808080</Color>
 
         <!-- Dark colors -->
         <Color x:Key="DarkPageBackgroundColor">Black</Color>
@@ -27,6 +28,7 @@
         <Color x:Key="DarkSecondaryTextColor">White</Color>
         <Color x:Key="DarkTertiaryTextColor">WhiteSmoke</Color>
         <Color x:Key="DarkButtonPressed">#00A6A6</Color>
+        <Color x:Key="DarkPickerBackground">#B4F5F5F5</Color>
 
         <Style TargetType="NavigationPage">
             <Setter Property="BarBackgroundColor"

@@ -114,29 +114,30 @@
 
             </Grid>
 
-            
+
 
             <sfbuttons:SfSegmentedControl 
                 Grid.Row="2" 
                 Grid.Column="0" 
                 Grid.ColumnSpan="3"
-                SegmentPadding="5"
-                SegmentHeight="40" 
+                VisibleSegmentsCount="3"
+                SegmentPadding="15"
+                SegmentHeight="50" 
                 SegmentWidth="40" 
                 FontSize="12"
-                SegmentCornerRadius="15"
+                SegmentCornerRadius="40"
+                SegmentBorderThickness="15"
                 DisplayMode="Image"
+                BackgroundColor="{AppThemeBinding Light={StaticResource LightPickerBackground}, Dark={StaticResource DarkPickerBackground}}"
                 FontIconFontColor="Black"
-                BackgroundColor="Transparent"
-                BorderColor="Transparent"
+                BorderColor="White"
                 Color="Transparent"
-                SegmentBorderThickness="0"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 SelectionChanged="chipGroup_SelectionChanged"
                 x:Name="chipGroup">
                 <sfbuttons:SfSegmentedControl.SelectionIndicatorSettings>
-                    <sfbuttons:SelectionIndicatorSettings Color="#FFFFFF"
+                    <sfbuttons:SelectionIndicatorSettings Color="{AppThemeBinding Light={StaticResource LightSecondaryColor}, Dark={StaticResource DarkSecondaryColor}}"
                                                           
                                                           Position="Bottom"
                                                           CornerRadius="30" />
