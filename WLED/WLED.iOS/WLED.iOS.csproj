@@ -505,6 +505,7 @@
       <Visible>false</Visible>
     </ImageAsset>
     <BundleResource Include="Resources\SegMDL2.ttf" />
+    <ITunesArtwork Include="iTunesArtwork%402x" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
