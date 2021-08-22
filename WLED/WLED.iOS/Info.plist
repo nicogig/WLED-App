@@ -24,13 +24,11 @@
 	<key>CFBundleIdentifier</key>
 	<string>com.nicolagigante.WLED</string>
 	<key>CFBundleVersion</key>
-	<string>2.0</string>
+	<string>9</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>WLED</string>
-	<key>XSAppIconAssets</key>
-	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>CFBundleShortVersionString</key>
@@ -50,5 +48,9 @@
 	<string>This app needs access to the photo gallery for picking photos and videos.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app needs access to photos gallery for picking photos and videos.</string>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcons.appiconset</string>
+  <key>CFBundleIconName</key>
+  <string>AppIcons</string>
 </dict>
 </plist>
