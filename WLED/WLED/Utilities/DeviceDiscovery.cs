@@ -1,46 +1,48 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Tmds.MDns;
+using Zeroconf;
+using System.Collections.Generic;
+
 
 namespace WLED
 {
-    //Discover _http._tcp services via mDNS/Zeroconf and verify they are WLED devices by sending an API call
+    //Discover _http._tcp services via Zeroconf and verify they are WLED devices by sending an API call
     class DeviceDiscovery
     {
         private static DeviceDiscovery Instance;
-        private ServiceBrowser serviceBrowser;
         public event EventHandler<DeviceCreatedEventArgs> ValidDeviceFound;
 
-        private DeviceDiscovery()
+        public async void StartDiscovery()
         {
-            serviceBrowser = new ServiceBrowser();
-            serviceBrowser.ServiceAdded += OnServiceAdded;
-        }
-
-        public void StartDiscovery()
-        {
-            serviceBrowser.StartBrowse("_http._tcp");
-        }
-
-        public void StopDiscovery()
-        {
-            serviceBrowser.StopBrowse();
-        }
-
-        private async void OnServiceAdded(object sender, ServiceAnnouncementEventArgs e)
-        {
-            WLEDDevice toAdd = new WLEDDevice();
-            foreach (var addr in e.Announcement.Addresses)
+            IReadOnlyList<IZeroconfHost> responses = null;
+            IReadOnlyList<string> domains;
+            if (ZeroconfResolver.IsiOSWorkaroundEnabled)
             {
-                toAdd.NetworkAddress = addr.ToString(); break; //only get first address
+                var iosDomains = await ZeroconfResolver.GetiOSDomains();
+                string selectedDomain = (iosDomains.Count > 0) ? iosDomains[0] : null;
+                domains = ZeroconfResolver.GetiOSInfoPlistServices(selectedDomain);
             }
-            toAdd.Name = e.Announcement.Hostname;
-            toAdd.NameIsCustom = false;
-            if (await toAdd.Refresh()) //check if the service is a valid WLED light
+            else
             {
-                OnValidDeviceFound(new DeviceCreatedEventArgs(toAdd, true));
+                domains = new List<string>() { "_http._tcp.local." };
+            }
+            responses = await ZeroconfResolver.ResolveAsync(domains);
+            foreach (var resp in responses)
+            {
+                WLEDDevice toAdd = new WLEDDevice();
+                toAdd.NetworkAddress = resp.IPAddress;
+                toAdd.Name = resp.DisplayName;
+                toAdd.NameIsCustom = false;
+                if (await toAdd.Refresh()) //check if the service is a valid WLED light
+                {
+                    OnValidDeviceFound(new DeviceCreatedEventArgs(toAdd, true));
+                }
             }
         }
+
+
+
+       
 
         public static DeviceDiscovery GetInstance()
         {

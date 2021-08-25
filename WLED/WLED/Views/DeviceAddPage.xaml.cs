@@ -3,6 +3,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using WLED.Views;
 using WLED.Resources;
+using Zeroconf;
+using System.Collections.Generic;
 
 namespace WLED
 {
@@ -62,6 +64,13 @@ namespace WLED
             var discovery = DeviceDiscovery.GetInstance();
             if (discoveryMode)
             {
+                /*b.Text = AppResources.StopDiscovery;
+                devicesFoundCount = 0;
+                IReadOnlyList<IZeroconfHost> results = await ZeroconfResolver.ResolveAsync("_http._tcp.local.");
+                foreach(var resp in results)
+                {
+                    Console.WriteLine(resp.ToString());
+                }*/
                 //Start mDNS discovery
                 b.Text = AppResources.StopDiscovery;
                 devicesFoundCount = 0;
@@ -72,7 +81,7 @@ namespace WLED
             } else
             {
                 //Stop mDNS discovery
-                discovery.StopDiscovery();
+                //discovery.StopDiscovery();
                 discovery.ValidDeviceFound -= OnDeviceCreated;
                 b.Text = AppResources.DiscoverLights;
             }      
@@ -104,7 +113,7 @@ namespace WLED
             if (discoveryMode)
             {
                 var discovery = DeviceDiscovery.GetInstance();
-                discovery.StopDiscovery();
+                //discovery.StopDiscovery();
                 discovery.ValidDeviceFound -= OnDeviceCreated;
             }
         }
