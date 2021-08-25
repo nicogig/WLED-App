@@ -51,12 +51,20 @@
             <Label Text="{x:Static resources:AppResources.FindLights}" 
                    Style="{StaticResource MediumLabelStyle}"
                    Margin="10" />
-
-            <Button Text="{x:Static resources:AppResources.DiscoverLights}" Style="{StaticResource ButtonStyle}" Clicked="OnDiscoveryButtonClicked"/>
-            <Label x:Name="discoveryResultLabel" Text="" 
+            <ActivityIndicator IsVisible="False"
+                           IsRunning="True"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Margin="20,40,20,20"
+                           x:Name="activityIndicator" />
+            <Label x:Name="discoveryResultLabel" Text="Test" 
                    Style="{StaticResource SmallLabelStyle}" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
                    Margin="10"
                    IsVisible="False" />
+            <Button Text="{x:Static resources:AppResources.DiscoverLights}" Style="{StaticResource ButtonStyle}" Clicked="OnDiscoveryButtonClicked"/>
+            
             <BoxView HeightRequest="1" HorizontalOptions="Fill" Margin="8,0" BackgroundColor="#888"/>
 
             <Label Text="{x:Static resources:AppResources.AddLight}" 

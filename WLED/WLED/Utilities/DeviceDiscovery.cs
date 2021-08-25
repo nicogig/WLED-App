@@ -12,7 +12,7 @@ namespace WLED
         private static DeviceDiscovery Instance;
         public event EventHandler<DeviceCreatedEventArgs> ValidDeviceFound;
 
-        public async void StartDiscovery()
+        public async Task<bool> StartDiscovery()
         {
             IReadOnlyList<IZeroconfHost> responses = null;
             IReadOnlyList<string> domains;
@@ -38,6 +38,7 @@ namespace WLED
                     OnValidDeviceFound(new DeviceCreatedEventArgs(toAdd, true));
                 }
             }
+            return true;
         }
 
 
