@@ -52,5 +52,11 @@
 	<string>Assets.xcassets/AppIcons.appiconset</string>
   <key>CFBundleIconName</key>
   <string>AppIcons</string>
+  <key>NSLocalNetworkUsageDescription</key>
+  <string>Looking for local mDNS/Bonjour services</string>
+  <key>NSBonjourServices</key>
+  <array>
+    <string>_http._tcp.local.</string>
+  </array>
 </dict>
 </plist>

@@ -3,6 +3,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using WLED.Views;
 using WLED.Resources;
+using Zeroconf;
+using System.Collections.Generic;
 
 namespace WLED
 {
@@ -54,7 +56,7 @@ namespace WLED
             if (devicesFoundCount == 0 || !address.Equals("192.168.4.1")) OnDeviceCreated(new DeviceCreatedEventArgs(device));
         }
 
-        private void OnDiscoveryButtonClicked(object sender, EventArgs e)
+        private async void OnDiscoveryButtonClicked(object sender, EventArgs e)
         {
             discoveryMode = !discoveryMode;
             Button b = sender as Button;
@@ -62,20 +64,25 @@ namespace WLED
             var discovery = DeviceDiscovery.GetInstance();
             if (discoveryMode)
             {
-                //Start mDNS discovery
                 b.Text = AppResources.StopDiscovery;
                 devicesFoundCount = 0;
                 discovery.ValidDeviceFound += OnDeviceCreated;
                 discoveryResultLabel.IsVisible = true;
+                activityIndicator.IsVisible = true;
                 discoveryResultLabel.Text = AppResources.NoLightsFound;
-                discovery.StartDiscovery();
-            } else
+                bool isFinished = await discovery.StartDiscovery();
+                if (isFinished)
+                {
+                    activityIndicator.IsVisible = false;
+                    b.Text = AppResources.DiscoverLights;
+                    discovery.ValidDeviceFound -= OnDeviceCreated;
+                }
+            } 
+            else
             {
-                //Stop mDNS discovery
-                discovery.StopDiscovery();
                 discovery.ValidDeviceFound -= OnDeviceCreated;
                 b.Text = AppResources.DiscoverLights;
-            }      
+            }    
         }
 
         protected virtual void OnDeviceCreated(DeviceCreatedEventArgs e)
@@ -104,7 +111,6 @@ namespace WLED
             if (discoveryMode)
             {
                 var discovery = DeviceDiscovery.GetInstance();
-                discovery.StopDiscovery();
                 discovery.ValidDeviceFound -= OnDeviceCreated;
             }
         }
@@ -118,9 +124,6 @@ namespace WLED
         public DeviceCreatedEventArgs(WLEDDevice created, bool refresh = true)
         {
             CreatedDevice = created;
-
-            //DeviceDiscovery already made an API request to confirm that the new device is a WLED light,
-            //so a refresh is only required for manually added devices
             RefreshRequired = refresh;
         }
     }
