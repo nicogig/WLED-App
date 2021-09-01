@@ -6,6 +6,7 @@ using System.Timers;
 using System.Xml.Serialization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using WLED.Views;
 
 namespace WLED.Views
 {
@@ -53,7 +54,7 @@ namespace WLED.Views
         {
             if (deviceList != null)
             {
-                var page = new DeviceModificationListViewPage(deviceList);
+                var page = new Settings.Settings();
                 await Navigation.PushAsync(page);
             }
         }

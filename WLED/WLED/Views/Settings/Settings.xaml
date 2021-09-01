@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="WLED.Views.Settings.Settings"
+             ios:Page.UseSafeArea="True"
+             Style="{StaticResource PageStyle}"
+             Title="Settings">
+    <ContentPage.Content>
+        <TableView Intent="Settings">
+            <TableSection Title="Devices">
+                <TextCell Text="Manage your Devices" />
+                <ViewCell>
+                    <Button
+                        Text="Manage your Devices"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource LightPageBackgroundColor}, Dark={StaticResource DarkPageBackgroundColor}}"
+                        />
+                </ViewCell>
+            </TableSection>
+            <TableSection Title="App Preferences">
+                <SwitchCell Text="Advanced Mode" On="True">
+                </SwitchCell>
+            </TableSection>
+        </TableView>
+    </ContentPage.Content>
+</ContentPage>
