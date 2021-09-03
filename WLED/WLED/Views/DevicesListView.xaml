@@ -33,7 +33,7 @@
             <ImageButton x:Name="imageLeft"
                          Source="{AppThemeBinding Dark=baseline_delete_white_24.png, Light=baseline_delete_black_24.png}"
                          Style="{StaticResource NavBarImageButton}"
-                         Clicked="OnDeleteButtonTapped"
+                         Clicked="OnSettingsButtonTapped"
                          Grid.Column="0" />
             <Image Source="wled_logo_akemi.png" Scale="0.8" Grid.Column="1" />
             <ImageButton x:Name="imageRight"

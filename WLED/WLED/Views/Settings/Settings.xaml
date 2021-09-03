@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:effects="clr-namespace:WLED.Effects"
              x:Class="WLED.Views.Settings.Settings"
              ios:Page.UseSafeArea="True"
              Style="{StaticResource PageStyle}"
@@ -9,19 +10,32 @@
     <ContentPage.Content>
         <TableView Intent="Settings">
             <TableSection Title="Devices">
-                <TextCell Text="Manage your Devices" />
-                <ViewCell>
-                    <Button
-                        Text="Manage your Devices"
-                        HorizontalOptions="Fill"
-                        VerticalOptions="Fill"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource LightPageBackgroundColor}, Dark={StaticResource DarkPageBackgroundColor}}"
-                        />
-                </ViewCell>
+                <TextCell Text="Manage your Devices" 
+                          TextColor="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}"
+                          x:Name="DevicesManager" 
+                          Tapped="DevicesManager_Tapped" />
             </TableSection>
             <TableSection Title="App Preferences">
-                <SwitchCell Text="Advanced Mode" On="True">
-                </SwitchCell>
+                <ViewCell>
+                    <StackLayout
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="FillAndExpand" 
+                        Orientation="Horizontal"
+                        Padding="16,0,16,0">
+                        <Label Text="Advanced Mode"
+                               TextColor="{AppThemeBinding Light={StaticResource LightPrimaryTextColor}, Dark={StaticResource DarkPrimaryTextColor}}"
+                               HorizontalOptions="StartAndExpand" 
+                               HorizontalTextAlignment="Start"
+                               VerticalOptions="CenterAndExpand"
+                               VerticalTextAlignment="Center" />
+                        <Switch VerticalOptions="StartAndExpand" 
+                                HorizontalOptions="EndAndExpand" 
+                                x:Name="AdvancedModeSwitch"
+                                effects:ChangeColorSwitchEffect.TrueColor="Lime" 
+                                effects:ChangeColorSwitchEffect.FalseColor="Aqua"
+                                effects:ChangeColorSwitchEffect.ThumbColor="Blue" />
+                    </StackLayout>
+                </ViewCell>
             </TableSection>
         </TableView>
     </ContentPage.Content>

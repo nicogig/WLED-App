@@ -50,13 +50,10 @@ namespace WLED.Views
             UpdateElementsVisibility();
         }
 
-        private async void OnDeleteButtonTapped (object sender, EventArgs e)
+        private async void OnSettingsButtonTapped (object sender, EventArgs e)
         {
-            if (deviceList != null)
-            {
-                var page = new Settings.Settings();
-                await Navigation.PushAsync(page);
-            }
+            var page = new Settings.Settings(deviceList);
+            await Navigation.PushAsync(page);
         }
 
         private async void OnAddButtonTapped (object sender, EventArgs e)
