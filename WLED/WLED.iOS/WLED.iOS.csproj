@@ -213,6 +213,60 @@
     <ImageAsset Include="Assets.xcassets\baseline_photo_camera_white_48.imageset\baseline_photo_camera_white_48pt_3x2.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_settings_black_24.imageset\baseline_settings_black_24pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_settings_black_24.imageset\baseline_settings_black_24pt_1x1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_settings_black_24.imageset\baseline_settings_black_24pt_1x2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_settings_black_24.imageset\baseline_settings_black_24pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_settings_black_24.imageset\baseline_settings_black_24pt_2x1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_settings_black_24.imageset\baseline_settings_black_24pt_2x2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_settings_black_24.imageset\baseline_settings_black_24pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_settings_black_24.imageset\baseline_settings_black_24pt_3x1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_settings_black_24.imageset\baseline_settings_black_24pt_3x2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_settings_white_24.imageset\baseline_settings_white_24pt_1x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_settings_white_24.imageset\baseline_settings_white_24pt_1x1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_settings_white_24.imageset\baseline_settings_white_24pt_1x2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_settings_white_24.imageset\baseline_settings_white_24pt_2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_settings_white_24.imageset\baseline_settings_white_24pt_2x1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_settings_white_24.imageset\baseline_settings_white_24pt_2x2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_settings_white_24.imageset\baseline_settings_white_24pt_3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_settings_white_24.imageset\baseline_settings_white_24pt_3x1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_settings_white_24.imageset\baseline_settings_white_24pt_3x2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\circle_logo.imageset\circle_logo.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -229,6 +283,12 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\baseline_photo_camera_white_48.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_settings_white_24.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\baseline_settings_black_24.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\outline_filter_vintage_white_24.imageset\outline_filter_vintage_white_24pt_1x.png">

@@ -31,7 +31,7 @@
                 <ColumnDefinition Width="65" />
             </Grid.ColumnDefinitions>
             <ImageButton x:Name="imageLeft"
-                         Source="{AppThemeBinding Dark=baseline_delete_white_24.png, Light=baseline_delete_black_24.png}"
+                         Source="{AppThemeBinding Dark=baseline_settings_white_24.png, Light=baseline_settings_black_24.png}"
                          Style="{StaticResource NavBarImageButton}"
                          Clicked="OnSettingsButtonTapped"
                          Grid.Column="0" />
