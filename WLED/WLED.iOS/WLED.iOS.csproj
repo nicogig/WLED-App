@@ -569,9 +569,6 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\sad_cat_akemi.imageset\sad_cat_akemi@1.png">
       <Visible>false</Visible>
     </ImageAsset>

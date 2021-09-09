@@ -260,3 +260,7 @@ paket-files/
 __pycache__/
 *.pyc
 WLED/WLED/Secrets.cs
+WLED/.DS_Store
+WLED/WLED/.DS_Store
+WLED/WLED.iOS/.DS_Store
+WLED/WLED.iOS/.DS_Store
