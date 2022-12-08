@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <PackageReference Include="ColorPicker.Xamarin.Forms" Version="1.3.4.18-rc" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="19.2.0.49" />
     <PackageReference Include="System.Drawing.Common" Version="6.0.0-preview.6.21352.12" />
     <PackageReference Include="TouchTracking.Forms" Version="1.1.0" />
